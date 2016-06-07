@@ -55,7 +55,7 @@ $CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", 
     * `update(params)`
   * userProfile
     * `get()`
-  * `update(params)`
+    * `update(params)`
   * userSchedule
     * `get()`
     * `update(params)`
