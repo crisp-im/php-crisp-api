@@ -1,0 +1,15 @@
+{
+    "name": "crispchat/php-crisp-api",
+    "description": "Crisp API PHP Wrapper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baptiste Jamin",
+            "email": "baptiste@crisp.im"
+        }
+    ],
+    "require": {
+        "tcdent/php-restclient": "^0.1.5",
+        "wisembly/elephant.io": "^3.1"
+    }
+}
