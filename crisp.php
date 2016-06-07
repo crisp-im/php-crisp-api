@@ -9,9 +9,6 @@
 use ElephantIO\Client as ElephantIO;
 use ElephantIO\Engine\SocketIO\Version1X as Engine1X;
 
-
-require __DIR__ . '/vendor/autoload.php';
-
 require __DIR__ . '/ressources/UserSession.php';
 require __DIR__ . '/ressources/UserAccount.php';
 require __DIR__ . '/ressources/UserNotification.php';
