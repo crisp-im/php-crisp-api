@@ -1,6 +1,6 @@
 {
     "name": "crispchat/php-crisp-api",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Crisp API PHP Wrapper",
     "license": "MIT",
     "authors": [
