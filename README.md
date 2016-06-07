@@ -82,3 +82,4 @@ $CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", 
     * `getOne(websiteId, operatorId)`
     * `deleteOne(websiteId, operatorId)`
     * `createOne(websiteId, parameters)`
+    * `updateOne(websiteId, operatorId, parameters)`
