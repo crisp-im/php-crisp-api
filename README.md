@@ -4,10 +4,8 @@
 
 `composer require crispchat/php-crisp-api`
 
-
-## API Docs
-
-The full API documentation is available at: [docs.crisp.im/api/](https://docs.crisp.im/api/)
+* **📝 Implements**: [Crisp Platform - API ~ v1](https://docs.crisp.im/api/v1/) at reference revision: 07/17/2016
+* **😘 Maintainer**: [@mywaystar](https://github.com/mywaystar)
 
 
 ## API Overview
