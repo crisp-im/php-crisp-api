@@ -32,16 +32,6 @@ $firstName = $profile["first_name"];
 echo "Hello $firstName";
 ```
 
-## Create your own bot!
-
-```php
-//Get your websites
-$CrispClient->userWebistes->get();
-//Get some conversations
-var_dump($CrispClient->webisteConversations->getList("WEBSITE_ID", 0));
-//$CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", "I'm a bot");
-```
-
 ### Available resources & methods
 
 *Where you see `params` it is a plain Array object, e.g. `[email => 'foo@example.com' ]`*
