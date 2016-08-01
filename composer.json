@@ -11,8 +11,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "tcdent/php-restclient": "^0.1.5",
-        "wisembly/elephant.io": "^3.1"
+        "tcdent/php-restclient": "^0.1.5"
     },
     "autoload": {
         "files": ["crisp.php"]

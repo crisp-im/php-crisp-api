@@ -38,8 +38,8 @@ echo "Hello $firstName";
 //Get your websites
 $CrispClient->userWebistes->get();
 //Get some conversations
-$CrispClient->webisteConversations->getList("WEBSITE_ID", 0);
-$CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", "I'm a bot");
+var_dump($CrispClient->webisteConversations->getList("WEBSITE_ID", 0));
+//$CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", "I'm a bot");
 ```
 
 ### Available resources & methods
@@ -64,27 +64,55 @@ $CrispClient->websiteConversations->sendTextMessage("WEBSITE_ID", "SESSION_ID", 
     * `update(params)`
   * userWebsites
     * `get()`
+  * emailSubscription
+    * `get(emailHash, key)`
+    * `update(emailHash, key, subscription)`
   * website
     * `create(params)`
     * `delete(websiteId)`
   * websiteSettings
     * `get(websiteId)`
     * `update(websiteId)`
-  * websiteStats
+  * websiteStatisitcs
     * `get(websiteId)`
+    * `getAllStatistics(websiteId)`
+    * `countTotalNumberOfConversations(websiteId)`
+    * `countNumberOfPendingConversations(websiteId)`
+    * `countNumberOfUnresolvedConversations(websiteId)`
+    * `countNumberOfResolvedConversations(websiteId)`
+    * `countNumberOfUnreadMessages(websiteId)`
+
   * websiteConversations
-    * `getList(websiteId, page)`
-    * `getOne(websiteId, sessionId)`
-    * `sendTextMessage(websiteId, sessionId, text)`
-    * `setState(websiteId, sessionId, state)`
-    * `setEmail(websiteId, sessionId, email)`
-    * `setNickname(websiteId, sessionId, nickname)`
-    * `setBlock(websiteId, sessionId, blocked)`
-    * `deleteOne(websiteId, sessionId)`
-    * `acknowledgeMessages(websiteId, sessionId, fingerprints)`
+    * `listConversations(websiteId, page = 0`
+    * `searchConversations(websiteId, page = 0, searchQuery, searchType)`
+  * websiteConversation
+    * `createNewConversation(websiteId)`
+    * `checkConversationExists(websiteId, sessionId)`
+    * `getConversation(websiteId, sessionId)`
+    * `removeConversation(websiteId, sessionId)`
+    * `initiateConversationWithExistingSession(websiteId, sessionId)`
+    * `getMessagesInConversation(websiteId, sessionId)`
+    * `sendMessageInConversation(websiteId, sessionId, message)`
+    * `composeMessageInConversation(websiteId, sessionId, compose)`
+    * `markMessagesReadInConversation(websiteId, sessionId, read)`
+    * `getConversationMetas(websiteId, sessionId)`
+    * `updateConversationMetas(websiteId, sessionId, metas)`
+    * `getConversationState(websiteId, sessionId)`
+    * `changeConversationState(websiteId, sessionId, state)`
+    * `getBlockStatusForConversation(websiteId, sessionId, metas)`
+    * `blockIncomingMessagesForConversation(websiteId, sessionId)`
+    * `getConversationState(websiteId, sessionId)`
   * websiteOperators
     * `getList(websiteId)`
     * `getOne(websiteId, operatorId)`
     * `deleteOne(websiteId, operatorId)`
     * `createOne(websiteId, parameters)`
     * `updateOne(websiteId, operatorId, parameters)`
+  * pluginSubscriptions
+    * `listAllActiveSubscriptions()`
+    * `listSubscriptionsForWebsite(websiteId)`
+    * `getSubscriptionDetails(websiteId)`
+    * `subscribeWebsiteToPlugin(websiteId, pluginId)`
+    * `unsubscribePluginFromWebsite(websiteId, pluginId)`
+    * `getSubscriptionSettings(websiteId, pluginId)`
+    * `saveSubscriptionSettings(websiteId, pluginId, settings)`

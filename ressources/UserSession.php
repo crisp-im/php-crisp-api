@@ -22,9 +22,10 @@ class CrispUserSession
     );
     if (isset($result->decode_response()["data"])) {
       $this->crisp->auth = $result->decode_response()["data"];
-      $this->crisp->_rest->set_option('username', $this->crisp->auth["identifier"]);
-      $this->crisp->_rest->set_option('password', $this->crisp->auth["key"]);
-      $this->crisp->_prepareSocket();
+      $this->crisp->authenticate(
+        $this->crisp->auth["identifier"],
+        $this->crisp->auth["key"]
+      );
       return $result->decode_response()["data"];
     }
     else {

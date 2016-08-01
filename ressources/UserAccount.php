@@ -21,8 +21,8 @@ class CrispUserAccount
   public function create($email, $password) {
     $result = $this->crisp->_rest->post("user/account",
       json_encode(array(
-        'email' => $email,
-        'password' => $password
+        "email" => $email,
+        "password" => $password
     )));
   }
 }
