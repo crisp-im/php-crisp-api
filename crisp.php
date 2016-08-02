@@ -67,7 +67,7 @@ class Crisp
 
   public function setTier($tier) {
     $headers = $options["headers"];
-    $headers["X-Crisp-Tier", $tier];
+    $headers["X-Crisp-Tier"] = $tier;
     $this->_rest->set_option('headers', $headers);
   }
 }
