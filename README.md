@@ -1,4 +1,4 @@
-# Crisp API Node
+# Crisp API PHP
 
 ## Installation with composer
 
