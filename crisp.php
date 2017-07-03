@@ -25,7 +25,7 @@ require __DIR__ . '/ressources/PluginSubscriptions.php';
 class Crisp
 {
   //Rest default configuration
-  public $DEFAULT_REST_HOST = "https://api.crisp.im";
+  public $DEFAULT_REST_HOST = "https://api.crisp.chat";
   public $DEFAULT_REST_BASE_PATH = "/v1/";
 
   public function __construct() {
