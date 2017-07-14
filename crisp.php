@@ -20,6 +20,7 @@ require __DIR__ . '/ressources/WebsiteSettings.php';
 require __DIR__ . '/ressources/WebsiteOperators.php';
 require __DIR__ . '/ressources/WebsiteConversations.php';
 require __DIR__ . '/ressources/WebsiteConversation.php';
+require __DIR__ . '/ressources/WebsitePeople.php';
 require __DIR__ . '/ressources/PluginSubscriptions.php';
 
 class Crisp
@@ -52,6 +53,7 @@ class Crisp
     $this->websiteStats         = new CrispWebsiteStats($this);
     $this->websiteConversations = new CrispWebsiteConversations($this);
     $this->websiteConversation  = new CrispWebsiteConversation($this);
+    $this->websitePeople        = new CrispWebsitePeople($this);
     $this->websiteOperators     = new CrispWebsiteOperators($this);
     $this->pluginSubscriptions  = new CrispPluginSubscriptions($this);
   }
