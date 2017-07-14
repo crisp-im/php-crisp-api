@@ -50,11 +50,11 @@ class CrispWebsitePeople
   }
 
    public function savePeopleProfile($websiteId, $peopleId, $data) {
-    $result = $this->crisp->_rest->execute(
-      "PUT",
+    $result = $this->crisp->_rest->put(
       "website/$websiteId/people/profile/$peopleId",
       json_encode($data)
     );
+    return $result->decode_response()["data"];
   }
 
   public function updatePeopleProfile($websiteId, $peopleId, $data) {
@@ -63,6 +63,7 @@ class CrispWebsitePeople
       "website/$websiteId/people/profile/$peopleId",
       json_encode($data)
     );
+    return $result->decode_response()["data"];
   }
 
   public function listPeopleSegments($websiteId, $page) {
@@ -79,34 +80,37 @@ class CrispWebsitePeople
     return $result->decode_response()["data"];
   }
 
-  public function addPeopleEvent($websiteId, $peopleId, $peopleId) {
-     $result = $this->crisp->_rest->execute(
-      "POST",
+  public function addPeopleEvent($websiteId, $peopleId, $data) {
+    $result = $this->crisp->_rest->post(
       "website/$websiteId/people/events/$peopleId",
       json_encode($data)
     );
+    return $result->decode_response()["data"];
   }
 
-  public function listPeopleEvent($websiteId, $peopleId, $peopleId, $page) {
-     $result = $this->crisp->_rest->execute(
+  public function listPeopleEvent($websiteId, $peopleId, $page) {
+    $result = $this->crisp->_rest->execute(
       "GET",
       "website/$websiteId/people/events/$peopleId/list/$page",
       json_encode($data)
     );
+    return $result->decode_response()["data"];
   }
 
-  public function getPeopleData($websiteId, $peopleId, $peopleId) {
+  public function getPeopleData($websiteId, $peopleId) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/people/data/$peopleId"
     );
+    return $result->decode_response()["data"];
   }
 
-  public function updatePeopleData($websiteId, $peopleId, $peopleId, $data) {
-    $result = $this->crisp->_rest->execute(
-      "PUT",
-      "website/$websiteId/people/data/$peopleId"
+  public function updatePeopleData($websiteId, $peopleId, $data) {
+    $result = $this->crisp->_rest->put(
+      "website/$websiteId/people/data/$peopleId",
       json_encode($data)
     );
+
+    return $result->decode_response();
   }
 }
 
