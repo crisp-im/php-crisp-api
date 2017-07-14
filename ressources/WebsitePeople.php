@@ -13,9 +13,10 @@ class CrispWebsitePeople
     $this->crisp = $parent;
   }
 
-  public function createNewPeopleProfile($websiteId) {
+  public function createNewPeopleProfile($websiteId, $params) {
     $result = $this->crisp->_rest->post(
-      "website/$websiteId/people/profile"
+      "website/$websiteId/people/profile",
+      json_encode($params)
     );
     return $result->decode_response()["data"];
   }
@@ -37,7 +38,7 @@ class CrispWebsitePeople
 
   public function listPeopleProfiles($websiteId, $page) {
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/people/$page"
+      "website/$websiteId/people/profiles/$page"
     );
     return $result->decode_response()["data"];
   }
