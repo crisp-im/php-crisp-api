@@ -74,7 +74,7 @@ echo "Hello $firstName";
   * websiteSettings
     * `get(websiteId)`
     * `update(websiteId)`
-  * websiteStatisitcs
+  * websiteStatistics
     * `get(websiteId)`
     * `getAllStatistics(websiteId)`
     * `countTotalNumberOfConversations(websiteId)`
