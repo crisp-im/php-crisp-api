@@ -92,7 +92,7 @@ echo "Hello $firstName";
     * `createNewPeopleProfile(websiteId)`
     * `checkPeopleProfileExists(websiteId, peopleId)`
     * `getPeopleProfile(websiteId, peopleId)`
-    * `listPeopleProfiles(websiteId, peopleId, page)`
+    * `listPeopleProfiles(websiteId, page)`
     * `removePeopleProfile(websiteId, peopleId)`
     * `savePeopleProfile(websiteId, peopleId, data)`
     * `updatePeopleProfile(websiteId, peopleId, data)`
