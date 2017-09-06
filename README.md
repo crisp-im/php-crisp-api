@@ -60,29 +60,14 @@ echo "Hello $firstName";
   * userProfile
     * `get()`
     * `update(params)`
-  * userSchedule
-    * `get()`
-    * `update(params)`
   * userWebsites
     * `get()`
-  * emailSubscription
-    * `get(emailHash, key)`
-    * `update(emailHash, key, subscription)`
   * website
     * `create(params)`
     * `delete(websiteId)`
   * websiteSettings
     * `get(websiteId)`
     * `update(websiteId)`
-  * websiteStatisitcs
-    * `get(websiteId)`
-    * `getAllStatistics(websiteId)`
-    * `countTotalNumberOfConversations(websiteId)`
-    * `countNumberOfPendingConversations(websiteId)`
-    * `countNumberOfUnresolvedConversations(websiteId)`
-    * `countNumberOfResolvedConversations(websiteId)`
-    * `countNumberOfUnreadMessages(websiteId)`
-
   * websiteConversations
     * `listConversations(websiteId, page = 0`
     * `searchConversations(websiteId, page = 0, searchQuery, searchType)`
