@@ -47,26 +47,6 @@ echo "Hello $firstName";
 
 *Where you see `params` it is a plain Array object, e.g. `[email => 'foo@example.com' ]`*
 
-### User
-
-From the API side, Users are Crisp Users, not your end users
-
-* **User Account**
-  * **Get User Account**: `CrispClient->userAccount->get()`
-  * **Create User Account**: `CrispClient->userAccount->create(params)`
-* **User Session**
-  * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
-  * **Recover the Password**: `CrispClient->userSession->recoverPassword(email)`
-  * **Logout**: `CrispClient->userSession->logout()`
-* **User Notifications**
-  * **Get User Notifications**: `CrispClient->userNotification->get()`
-  * **Update User Notifications**: `CrispClient->userNotification->update(params)`
-* **User Profile**
-  * **Get User Profile**: `CrispClient->userProfile->get()`
-  * **Update User Profile**: `CrispClient->userProfile->update(params)`
-* **User Websites**
-  * **Get**: `CrispClient->userWebsites->get()`
-
 ### Website
 
 * **Website Conversations**
@@ -120,3 +100,23 @@ From the API side, Users are Crisp Users, not your end users
   * **Unsubscribe Plguin From Website**: `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)`
   * **Get Subscription Settings**: `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)`
   * **Save Subscription Settings**: `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)`
+
+### User
+
+From the API side, Users are Crisp Users, not your end users
+
+* **User Account**
+  * **Get User Account**: `CrispClient->userAccount->get()`
+  * **Create User Account**: `CrispClient->userAccount->create(params)`
+* **User Session**
+  * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
+  * **Recover the Password**: `CrispClient->userSession->recoverPassword(email)`
+  * **Logout**: `CrispClient->userSession->logout()`
+* **User Notifications**
+  * **Get User Notifications**: `CrispClient->userNotification->get()`
+  * **Update User Notifications**: `CrispClient->userNotification->update(params)`
+* **User Profile**
+  * **Get User Profile**: `CrispClient->userProfile->get()`
+  * **Update User Profile**: `CrispClient->userProfile->update(params)`
+* **User Websites**
+  * **Get**: `CrispClient->userWebsites->get()`
