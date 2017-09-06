@@ -47,71 +47,76 @@ echo "Hello $firstName";
 
 *Where you see `params` it is a plain Array object, e.g. `[email => 'foo@example.com' ]`*
 
-  * userSession
-    * `loginWithEmail(email, password)`
-    * `recoverPassword(email)`
-    * `logout()`
-  * userAccount
-    * `get()`
-    * `create(params)`
-  * userNotification
-    * `get()`
-    * `update(params)`
-  * userProfile
-    * `get()`
-    * `update(params)`
-  * userWebsites
-    * `get()`
-  * website
-    * `create(params)`
-    * `delete(websiteId)`
-  * websiteSettings
-    * `get(websiteId)`
-    * `update(websiteId)`
-  * websiteConversations
-    * `listConversations(websiteId, page = 0`
-    * `searchConversations(websiteId, page = 0, searchQuery, searchType)`
-  * websiteConversation
-    * `createNewConversation(websiteId)`
-    * `checkConversationExists(websiteId, sessionId)`
-    * `getConversation(websiteId, sessionId)`
-    * `removeConversation(websiteId, sessionId)`
-    * `initiateConversationWithExistingSession(websiteId, sessionId)`
-    * `getMessagesInConversation(websiteId, sessionId)`
-    * `sendMessageInConversation(websiteId, sessionId, message)`
-    * `composeMessageInConversation(websiteId, sessionId, compose)`
-    * `markMessagesReadInConversation(websiteId, sessionId, read)`
-    * `getConversationMetas(websiteId, sessionId)`
-    * `updateConversationMetas(websiteId, sessionId, metas)`
-    * `getConversationState(websiteId, sessionId)`
-    * `changeConversationState(websiteId, sessionId, state)`
-    * `getBlockStatusForConversation(websiteId, sessionId, metas)`
-    * `blockIncomingMessagesForConversation(websiteId, sessionId)`
-    * `getConversationState(websiteId, sessionId)`
-  * websitePeople
-    * `createNewPeopleProfile(websiteId)`
-    * `checkPeopleProfileExists(websiteId, peopleId)`
-    * `getPeopleProfile(websiteId, peopleId)`
-    * `listPeopleProfiles(websiteId, page)`
-    * `removePeopleProfile(websiteId, peopleId)`
-    * `savePeopleProfile(websiteId, peopleId, data)`
-    * `updatePeopleProfile(websiteId, peopleId, data)`
-    * `listPeopleSegments(websiteId, peopleId, page)`
-    * `listPeopleEvent(websiteId, peopleId, page)`
-    * `getPeopleData(websiteId, peopleId)`
-    * `updatePeopleData(websiteId, peopleId, data)`
+### User
 
-  * websiteOperators
-    * `getList(websiteId)`
-    * `getOne(websiteId, operatorId)`
-    * `deleteOne(websiteId, operatorId)`
-    * `createOne(websiteId, parameters)`
-    * `updateOne(websiteId, operatorId, parameters)`
-  * pluginSubscriptions
-    * `listAllActiveSubscriptions()`
-    * `listSubscriptionsForWebsite(websiteId)`
-    * `getSubscriptionDetails(websiteId)`
-    * `subscribeWebsiteToPlugin(websiteId, pluginId)`
-    * `unsubscribePluginFromWebsite(websiteId, pluginId)`
-    * `getSubscriptionSettings(websiteId, pluginId)`
-    * `saveSubscriptionSettings(websiteId, pluginId, settings)`
+From the API side, Users are Crisp Users, not your end users
+
+* **User Account**
+  * **Get User Account**: `CrispClient->userAccount->get()`
+  * **Create User Account**: `CrispClient->userAccount->create(params)`
+* **User Session**
+  * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
+  * **Recover the Password**: `CrispClient->userSession->recoverPassword(email)`
+  * **Logout**: `CrispClient->userSession->logout()`
+* **User Notifications**
+  * **Get User Notifications**: `CrispClient->userNotification->get()`
+  * **Update User Notifications**: `CrispClient->userNotification->update(params)`
+* **User Profile**
+  * **Get User Profile**: `CrispClient->userProfile->get()`
+  * **Update User Profile**: `CrispClient->userProfile->update(params)`
+* **User Websites**
+  * **Get**: `CrispClient->userWebsites->get()`
+
+### Website
+
+* **Website Conversations**
+  * **Get Conversation List**: `CrispClient->websiteConversations->getList(websiteId, page)`
+  * **Get A Conversation**: `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
+  * **Get Conversation Metadata**: `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
+  * **Update Conversation Metadata**:`CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
+  * **Get Conversation Messages**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
+  * **Create a Conversation**: `CrispClient->websiteConversations->create(websiteId)`
+  * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
+  * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
+  * **Set Conversation State:**: `CrispClient->websiteConversations->setState(websiteId, sessionId, state)`
+  * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
+  * **Delete Conversation:**:`CrispClient->deleteOne(websiteId, sessionId)`
+  * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
+
+* **Website People** (These are your End Users)
+  *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
+  *  **Check By Segments**: `CrispClient->websitePeople->findBySegments(websiteId, segments)`
+  *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
+  *  **Check  If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Get People Profile**: `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
+  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, peopleId, page)`
+  *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
+  *  **Save A Profile**: `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
+  *  **Update A Profile**: `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
+  *  **List Segments**: `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)`
+  *  **List Events**: `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)`
+  *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
+  *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
+  
+* **Website Base**
+  * **Create A Website**: `CrispClient->website->create(params)`
+  * **Create User Account**: `CrispClient->website->delete(websiteId)`
+* **Website Settings**
+  * **Get Website Settings**: `CrispClient->websiteSettings->get(websiteId)`
+  * **Update Website Settings**: `CrispClient->websiteSettings->get(params)`
+* **Website Operators**
+  * **Get All Operators**: `CrispClient->websiteOperators->getList(websiteId)`
+  * **Get One Operators**: `CrispClient->websiteOperators->getOne(websiteId, operatorId)`
+  * **Delete One Operators**: `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
+  * **Create An Operator**: `CrispClient->websiteOperators->createOne(websiteId, parameters)`
+  * **Update An Operator**: `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
+
+### Plugins
+* **Plugin Subscriptions**
+  * **List All Active Subsciptions**: `CrispClient->pluginSubscriptions->listAllActiveSubscriptions()`
+  * **Get All Subscriptions For Website**: `CrispClient->pluginSubscriptions->listSubscriptionsForWebsite(websiteId)`
+  * **Get Subscription Details**: `CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId)`
+  * **Subscribe Website To Plugin**: `CrispClient->pluginSubscriptions->subscribeWebsiteToPlugin(websiteId, pluginId)`
+  * **Unsubscribe Plguin From Website**: `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)`
+  * **Get Subscription Settings**: `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)`
+  * **Save Subscription Settings**: `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)`

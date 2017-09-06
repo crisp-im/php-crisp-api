@@ -13,6 +13,28 @@ class CrispWebsitePeople
     $this->crisp = $parent;
   }
 
+  public function findByEmail($websiteId, $email) {
+    $searchFilter = [["model" => "people","criterion" => "email","operator" => "eq","query" => [$email]]];
+
+    $result = $this->crisp->_rest->get(
+      "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
+    );
+    return $result->decode_response()["data"];
+  }
+
+  public function findBySegments($websiteId, $segments) {
+    $searchFilter = [];
+
+    foreach ($segments as $segment){
+      $searchFilter[] = ["model" => "people","criterion" => "segments","operator" => "eq","query" => [$segment]];
+    }
+
+    $result = $this->crisp->_rest->get(
+      "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
+    );
+    return $result->decode_response()["data"];
+  }
+
   public function createNewPeopleProfile($websiteId, $params) {
     $result = $this->crisp->_rest->post(
       "website/$websiteId/people/profile",
