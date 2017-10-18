@@ -73,6 +73,7 @@ echo "Hello $firstName";
   *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
   *  **Save A Profile**: `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
+  *  **List Conversations** `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)`
   *  **List Segments**: `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)`
   *  **List Events**: `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)`
   *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`

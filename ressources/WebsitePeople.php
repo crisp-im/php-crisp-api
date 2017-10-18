@@ -98,7 +98,7 @@ class CrispWebsitePeople
 
   public function listPeopleConversations($websiteId, $peopleId, $page) {
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/people/conversation/$peopleId/list/$page"
+      "website/$websiteId/people/conversations/$peopleId/list/$page"
     );
     return $result->decode_response()["data"];
   }
