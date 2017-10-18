@@ -13,7 +13,7 @@ class CrispWebsiteVisitors
     $this->crisp = $parent;
   }
 
-   public function listVisitors($websiteId, $page = 0) {
+   public function listVisitors($websiteId, $page = 1) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/visitors/$page"
     );

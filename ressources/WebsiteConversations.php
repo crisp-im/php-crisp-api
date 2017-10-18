@@ -13,7 +13,7 @@ class CrispWebsiteConversations
     $this->crisp = $parent;
   }
 
-   public function getList($websiteId, $page = 0) {
+   public function getList($websiteId, $page = 1) {
     $result = $this->crisp->_rest->get(
       "website/$websiteId/conversations/$page"
     );
