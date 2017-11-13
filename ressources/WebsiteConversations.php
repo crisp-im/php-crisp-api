@@ -92,8 +92,7 @@ class CrispWebsiteConversations
   public function updateMeta(
     $websiteId, $sessionId, $metas) {
 
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/conversation/$sessionId/meta",
       json_encode($metas)
     );
