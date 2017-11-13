@@ -64,7 +64,7 @@ class CrispWebsiteConversations
 
     $result = $this->crisp->_rest->post(
       "website/$websiteId/conversation/$sessionId/message",
-      $message
+      json_encode($message)
     );
     return $result->decode_response()["data"];
   }
