@@ -19,7 +19,8 @@ class CrispUserNotification
   }
 
   public function update($params) {
-    $result = $this->crisp->_rest->execute("user/account/account", "PATCH",
+    $result = $this->crisp->_rest->patch(
+      "user/account/account",
       json_encode($params)
     );
   }

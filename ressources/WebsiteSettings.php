@@ -19,9 +19,8 @@ class CrispWebsiteSettings
   }
 
   public function update($websiteId, $params) {
-    $result = $this->crisp->_rest->execute(
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/settings",
-      "PATCH",
       $params
     );
     return $result->decode_response()["data"];

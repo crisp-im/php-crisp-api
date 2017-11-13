@@ -19,8 +19,7 @@ class CrispUserAvailability
   }
 
   public function update($availability) {
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "user/availability",
       json_encode($availability)
     );

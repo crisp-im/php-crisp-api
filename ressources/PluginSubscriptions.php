@@ -51,8 +51,7 @@ class CrispPluginSubscriptions
   }
 
   public function saveSubscriptionSettings($websiteId, $pluginId, $settings) {
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "/plugins/subscription/$websiteId/$pluginId/settings",
       json_encode($settings)
     );

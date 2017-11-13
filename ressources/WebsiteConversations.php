@@ -64,7 +64,7 @@ class CrispWebsiteConversations
 
     $result = $this->crisp->_rest->post(
       "website/$websiteId/conversation/$sessionId/message",
-      $message
+      json_encode($message)
     );
     return $result->decode_response()["data"];
   }
@@ -72,8 +72,7 @@ class CrispWebsiteConversations
   public function acknowledgeMessages(
     $websiteId, $sessionId, $read) {
 
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/conversation/$sessionId/read",
       json_encode($read)
     );
@@ -92,8 +91,7 @@ class CrispWebsiteConversations
   public function updateMeta(
     $websiteId, $sessionId, $metas) {
 
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/conversation/$sessionId/meta",
       json_encode($metas)
     );
@@ -103,8 +101,7 @@ class CrispWebsiteConversations
   public function setState(
     $websiteId, $sessionId, $state) {
 
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/conversation/$sessionId/state",
       json_encode(array("state" => $state))
     );
@@ -114,8 +111,7 @@ class CrispWebsiteConversations
   public function setBlock(
     $websiteId, $sessionId, $blocked = true) {
 
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/conversation/$sessionId/block",
       json_encode($blocked)
     );
