@@ -19,7 +19,8 @@ class CrispUserProfile
   }
 
   public function update($params) {
-    $result = $this->crisp->_rest->execute("user/account/profile", "PATCH",
+    $result = $this->crisp->_rest->patch(
+      "user/account/profile",
       json_encode($params)
     );
   }

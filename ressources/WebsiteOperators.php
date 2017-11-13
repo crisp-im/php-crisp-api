@@ -29,9 +29,8 @@ class CrispWebsiteOperators
   }
 
   public function updateOne($websiteId, $operatorId, $params) {
-    $result = $this->crisp->_rest->execute(
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/operator/$operatorId",
-      "PATCH",
       $params
     );
     return $result->decode_response()["data"];

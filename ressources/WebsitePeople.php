@@ -81,8 +81,7 @@ class CrispWebsitePeople
   }
 
   public function updatePeopleProfile($websiteId, $peopleId, $data) {
-    $result = $this->crisp->_rest->execute(
-      "PATCH",
+    $result = $this->crisp->_rest->patch(
       "website/$websiteId/people/profile/$peopleId",
       json_encode($data)
     );
