@@ -3,7 +3,7 @@
  * Bundle: Crisp / UserWebsites
  * Project: Crisp - PHP API
  * Author: Baptiste Jamin http://jamin.me/
- * Copyright: 2016, Crisp IM
+ * Copyright: 2018, Crisp IM
  */
 
 class CrispUserWebsites

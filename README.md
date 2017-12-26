@@ -85,6 +85,11 @@ echo "Hello $firstName";
 * **Website Settings**
   * **Get Website Settings**: `CrispClient->websiteSettings->get(websiteId)`
   * **Update Website Settings**: `CrispClient->websiteSettings->get(params)`
+* **Website Verify**
+  * **Get Verify Settings**: `CrispClient->websiteVerify->getSettings(websiteId)`
+  * **Update Verify Settings**: `CrispClient->websiteVerify->updateSettings(websiteId, params)`
+  * **Get Verify Key**: `CrispClient->websiteVerify->getKey(websiteId)`
+  * **Roll Key**: `CrispClient->websiteVerify->rollKey(websiteId)`
 * **Website Operators**
   * **Get All Operators**: `CrispClient->websiteOperators->getList(websiteId)`
   * **Get One Operators**: `CrispClient->websiteOperators->getOne(websiteId, operatorId)`
