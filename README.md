@@ -76,6 +76,7 @@ echo "Hello $firstName";
   *  **List Conversations** `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)`
   *  **List Segments**: `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)`
   *  **List Events**: `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)`
+  *  **Add Event**: `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
   *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
   
