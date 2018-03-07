@@ -6,6 +6,8 @@
  * Copyright: 2018, Crisp IM
  */
 
+namespace Crisp\Crisp;
+
 require __DIR__ . '/ressources/UserSession.php';
 require __DIR__ . '/ressources/UserAccount.php';
 require __DIR__ . '/ressources/UserAvailability.php';
@@ -30,7 +32,7 @@ class Crisp
     $this->auth = array();
     $this->_rest = new RestClient(array(
       "base_url"   => $this->DEFAULT_REST_HOST . $this->DEFAULT_REST_BASE_PATH,
-      "headers"      => ["Content-Type" => "application/json"],
+      "headers"      => array("Content-Type" => "application/json"),
       "content_type" => "application/json"
     ));
     $this->_rest->register_decoder("json", function($data) {
