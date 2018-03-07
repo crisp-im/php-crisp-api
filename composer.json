@@ -14,6 +14,8 @@
         "tcdent/php-restclient": "^0.1.7"
     },
     "autoload": {
-        "files": ["crisp.php"]
+        "psr-4": {
+            "\\Crisp\\Crisp": "/"
+        }
     }
 }
