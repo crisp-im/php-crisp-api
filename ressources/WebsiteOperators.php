@@ -14,7 +14,7 @@ class CrispWebsiteOperators
   }
 
   public function getList($websiteId) {
-    $result = $this->crisp->_rest->get("website/$websiteId/operator");
+    $result = $this->crisp->_rest->get("website/$websiteId/operators/list");
     return $result->decode_response()["data"];
   }
 
