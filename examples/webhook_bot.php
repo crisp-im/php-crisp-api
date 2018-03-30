@@ -18,7 +18,7 @@ if ($input["event"] == "message:send") {
 	$websiteId = $input["data"]["website_id"];
 	$sessionId = $input["data"]["session_id"];
 	$message = [
-		"text" => "This is a bot reply",
+		"content" => "This is a bot reply",
 		"type" => "text",
 		"from" => "operator",
 		"origin" => "chat"
