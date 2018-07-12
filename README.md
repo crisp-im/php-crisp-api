@@ -60,7 +60,7 @@ echo "Hello $firstName";
   * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
   * **Set Conversation State:**: `CrispClient->websiteConversations->setState(websiteId, sessionId, state)`
   * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
-  * **Delete Conversation:**:`CrispClient->deleteOne(websiteId, sessionId)`
+  * **Delete Conversation:**:`CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
   * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
 * **Website People** (These are your End Users)
