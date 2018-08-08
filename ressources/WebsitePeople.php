@@ -113,8 +113,7 @@ class CrispWebsitePeople
   public function listPeopleEvent($websiteId, $peopleId, $page) {
     $result = $this->crisp->_rest->execute(
       "GET",
-      "website/$websiteId/people/events/$peopleId/list/$page",
-      json_encode($data)
+      "website/$websiteId/people/events/$peopleId/list/$page"
     );
     return $result->decode_response()["data"];
   }
