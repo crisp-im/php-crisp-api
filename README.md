@@ -79,7 +79,7 @@ echo "Hello $firstName";
   *  **Add Event**: `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
   *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
-  
+
 * **Website Base**
   * **Create A Website**: `CrispClient->website->create(params)`
   * **Create User Account**: `CrispClient->website->delete(websiteId)`
@@ -112,18 +112,7 @@ echo "Hello $firstName";
 
 From the API side, Users are Crisp Users, not your end users
 
-* **User Account**
-  * **Get User Account**: `CrispClient->userAccount->get()`
-  * **Create User Account**: `CrispClient->userAccount->create(params)`
 * **User Session**
   * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
   * **Recover the Password**: `CrispClient->userSession->recoverPassword(email)`
   * **Logout**: `CrispClient->userSession->logout()`
-* **User Notifications**
-  * **Get User Notifications**: `CrispClient->userNotification->get()`
-  * **Update User Notifications**: `CrispClient->userNotification->update(params)`
-* **User Profile**
-  * **Get User Profile**: `CrispClient->userProfile->get()`
-  * **Update User Profile**: `CrispClient->userProfile->update(params)`
-* **User Websites**
-  * **Get**: `CrispClient->userWebsites->get()`

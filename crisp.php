@@ -7,11 +7,6 @@
  */
 
 require __DIR__ . '/ressources/UserSession.php';
-require __DIR__ . '/ressources/UserAccount.php';
-require __DIR__ . '/ressources/UserAvailability.php';
-require __DIR__ . '/ressources/UserNotification.php';
-require __DIR__ . '/ressources/UserProfile.php';
-require __DIR__ . '/ressources/UserWebsites.php';
 require __DIR__ . '/ressources/Website.php';
 require __DIR__ . '/ressources/WebsiteSettings.php';
 require __DIR__ . '/ressources/WebsiteVerify.php';
@@ -38,11 +33,6 @@ class Crisp
     });
 
     $this->userSession          = new CrispUserSession($this);
-    $this->userAvailability     = new CrispUserAvailability($this);
-    $this->userAccount          = new CrispUserAccount($this);
-    $this->userNotification     = new CrispUserNotification($this);
-    $this->userProfile          = new CrispUserProfile($this);
-    $this->userWebsites         = new CrispUserWebsites($this);
     $this->website              = new CrispWebsite($this);
     $this->websiteSettings      = new CrispWebsiteSettings($this);
     $this->websiteVerify        = new CrispWebsiteVerify($this);
