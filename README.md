@@ -114,5 +114,4 @@ From the API side, Users are Crisp Users, not your end users
 
 * **User Session**
   * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
-  * **Recover the Password**: `CrispClient->userSession->recoverPassword(email)`
   * **Logout**: `CrispClient->userSession->logout()`

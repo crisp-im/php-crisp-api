@@ -33,13 +33,6 @@ class CrispUserSession
     }
   }
 
-  public function resetPassword($email) {
-    $result = $this->crisp->_rest->post("user/session/reset",
-      json_encode(array(
-        'email' => $email
-    )));
-  }
-
   public function logout() {
     $result = $this->crisp->_rest->post("user/session/logout");
     $this->crisp->auth = array();
