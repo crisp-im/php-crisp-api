@@ -15,7 +15,7 @@ class CrispWebsiteVisitors
 
    public function listVisitors($websiteId, $page = 1) {
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/visitors/$page"
+      "website/$websiteId/visitors/list/$page"
     );
     return $result->decode_response()["data"];
   }
