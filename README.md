@@ -97,6 +97,8 @@ echo "Hello $firstName";
   * **Delete One Operators**: `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
   * **Create An Operator**: `CrispClient->websiteOperators->createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
+* **Website Visitors**
+  * **List Visitors**: `CrispClient->websiteVisitors->listVisitors(websiteId, page)`
 
 ### Plugins
 * **Plugin Subscriptions**
