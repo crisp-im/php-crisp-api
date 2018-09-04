@@ -40,7 +40,7 @@ class Crisp
     $this->websiteConversations = new CrispWebsiteConversations($this);
     $this->websitePeople        = new CrispWebsitePeople($this);
     $this->websiteOperators     = new CrispWebsiteOperators($this);
-    $this->websiteVisitors     = new CrispWebsiteVisitors($this);
+    $this->websiteVisitors      = new CrispWebsiteVisitors($this);
     $this->pluginSubscriptions  = new CrispPluginSubscriptions($this);
   }
 
