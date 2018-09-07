@@ -118,3 +118,6 @@ From the API side, Users are Crisp Users, not your end users
   * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
   * **Logout**: `CrispClient->userSession->logout()`
 
+
+# Using Laravel?
+See this package: [Laravel-Crisp](https://github.com/cierrateam/laravel-crisp)
