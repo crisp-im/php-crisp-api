@@ -64,6 +64,9 @@ echo "Hello $firstName";
   * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
 * **Website People** (These are your End Users)
+
+The **PeopleID** argument can be an **email** or the **PeopleID**.
+
   *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
   *  **Check By Segments**: `CrispClient->websitePeople->findBySegments(websiteId, segments)`
   *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`

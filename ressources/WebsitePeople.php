@@ -14,10 +14,8 @@ class CrispWebsitePeople
   }
 
   public function findByEmail($websiteId, $email) {
-    $searchFilter = [["model" => "people","criterion" => "email","operator" => "eq","query" => [$email]]];
-
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
+      "website/$websiteId/people/profile/$email"
     );
     return $result->decode_response()["data"];
   }
