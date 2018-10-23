@@ -42,11 +42,10 @@ class CrispWebsitePeople
   }
 
   public function checkPeopleProfileExists($websiteId, $peopleId) {
-    $result = $this->crisp->_rest->execute(
-      "HEAD",
+    $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profile/$peopleId"
     );
-    return $result->decode_response()["data"];
+    return !empty($result->decode_response()["data"]);
   }
 
   public function getPeopleProfile($websiteId, $peopleId) {
