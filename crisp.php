@@ -7,6 +7,7 @@
  */
 
 require __DIR__ . '/ressources/UserSession.php';
+require __DIR__ . '/ressources/UserProfile.php';
 require __DIR__ . '/ressources/Website.php';
 require __DIR__ . '/ressources/WebsiteSettings.php';
 require __DIR__ . '/ressources/WebsiteVerify.php';
@@ -34,6 +35,7 @@ class Crisp
     });
 
     $this->userSession          = new CrispUserSession($this);
+    $this->userProfile          = new CrispUserProfile($this);
     $this->website              = new CrispWebsite($this);
     $this->websiteSettings      = new CrispWebsiteSettings($this);
     $this->websiteVerify        = new CrispWebsiteVerify($this);
