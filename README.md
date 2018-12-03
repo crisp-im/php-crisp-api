@@ -54,7 +54,7 @@ echo "Hello $firstName";
   * **Get A Conversation**: `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
+  * **Get a Messages in a Conversation**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
   * **Create a Conversation**: `CrispClient->websiteConversations->create(websiteId)`
   * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
