@@ -6,9 +6,13 @@
 
 ## Authentication
 
-To authenticate against the API, generate your session identifier and session key **once** using the [Crisp token generation utility](https://go.crisp.chat/account/token/). You'll get a token keypair made of 2 values.
+To authenticate against the API, generate your session identifier and session key **once** using the following cURL request in your terminal (replace `YOUR_ACCOUNT_EMAIL` and `YOUR_ACCOUNT_PASSWORD`):
 
-**Keep your token keypair values private, and store them safely for long-term use.**
+```bash
+curl -H "Content-Type: application/json" -X POST -d '{"email":"YOUR_ACCOUNT_EMAIL","password":"YOUR_ACCOUNT_PASSWORD"}' https://api.crisp.chat/v1/user/session/login
+```
+
+If authentication succeeds, you will get a JSON response containing your authentication keys: `identifier` and `key`. **Keep those 2 values private, and store them safely for long-term use**.
 
 Then, add authentication parameters to your `client` instance right after you create it:
 
@@ -23,7 +27,7 @@ $CrispClient->authenticate(identifier, key);
 // Now, you can use authenticated API sections.
 ```
 
-**🔴 Important: Make sure to generate your token once, and use the same token keys in all your subsequent requests to the API. Do not generate too many tokens, as we may invalidate your older tokens to make room for newer tokens.**
+**🔴 Important: Be sure to login once, and re-use the same authentication keys (same `identifier` + `key`) in all your subsequent requests to the API. Do not generate new tokens from your code for every new request to the API (you will be heavily rate-limited; that will induce HTTP failures for some of your API calls).**
 
 ## API Overview
 
@@ -50,7 +54,7 @@ echo "Hello $firstName";
   * **Get A Conversation**: `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
+  * **Get a Messages in a Conversation**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
   * **Create a Conversation**: `CrispClient->websiteConversations->create(websiteId)`
   * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
@@ -60,6 +64,9 @@ echo "Hello $firstName";
   * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
 
 * **Website People** (These are your End Users)
+
+The **PeopleID** argument can be an **email** or the **PeopleID**.
+
   *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
   *  **Check By Segments**: `CrispClient->websitePeople->findBySegments(websiteId, segments)`
   *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
@@ -93,6 +100,8 @@ echo "Hello $firstName";
   * **Delete One Operators**: `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
   * **Create An Operator**: `CrispClient->websiteOperators->createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
+* **Website Visitors**
+  * **List Visitors**: `CrispClient->websiteVisitors->listVisitors(websiteId, page)`
 
 ### Plugins
 * **Plugin Subscriptions**
@@ -103,3 +112,12 @@ echo "Hello $firstName";
   * **Unsubscribe Plguin From Website**: `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)`
   * **Get Subscription Settings**: `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)`
   * **Save Subscription Settings**: `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)`
+
+### User
+
+From the API side, Users are Crisp Users, not your end users
+
+* **User Session**
+  * **Create A New Sessiont**: `CrispClient->userSession->loginWithEmail(email, password)`
+  * **Logout**: `CrispClient->userSession->logout()`
+

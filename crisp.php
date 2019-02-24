@@ -6,10 +6,13 @@
  * Copyright: 2018, Crisp IM
  */
 
+require __DIR__ . '/ressources/UserSession.php';
+require __DIR__ . '/ressources/UserProfile.php';
 require __DIR__ . '/ressources/Website.php';
 require __DIR__ . '/ressources/WebsiteSettings.php';
 require __DIR__ . '/ressources/WebsiteVerify.php';
 require __DIR__ . '/ressources/WebsiteOperators.php';
+require __DIR__ . '/ressources/WebsiteVisitors.php';
 require __DIR__ . '/ressources/WebsiteConversations.php';
 require __DIR__ . '/ressources/WebsitePeople.php';
 require __DIR__ . '/ressources/PluginSubscriptions.php';
@@ -31,12 +34,15 @@ class Crisp
       return json_decode($data, TRUE);
     });
 
+    $this->userSession          = new CrispUserSession($this);
+    $this->userProfile          = new CrispUserProfile($this);
     $this->website              = new CrispWebsite($this);
     $this->websiteSettings      = new CrispWebsiteSettings($this);
     $this->websiteVerify        = new CrispWebsiteVerify($this);
     $this->websiteConversations = new CrispWebsiteConversations($this);
     $this->websitePeople        = new CrispWebsitePeople($this);
     $this->websiteOperators     = new CrispWebsiteOperators($this);
+    $this->websiteVisitors      = new CrispWebsiteVisitors($this);
     $this->pluginSubscriptions  = new CrispPluginSubscriptions($this);
   }
 

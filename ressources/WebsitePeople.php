@@ -14,10 +14,8 @@ class CrispWebsitePeople
   }
 
   public function findByEmail($websiteId, $email) {
-    $searchFilter = [["model" => "people","criterion" => "email","operator" => "eq","query" => [$email]]];
-
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
+      "website/$websiteId/people/profile/$email"
     );
     return $result->decode_response()["data"];
   }
@@ -44,11 +42,10 @@ class CrispWebsitePeople
   }
 
   public function checkPeopleProfileExists($websiteId, $peopleId) {
-    $result = $this->crisp->_rest->execute(
-      "HEAD",
+    $result = $this->crisp->_rest->get(
       "website/$websiteId/people/profile/$peopleId"
     );
-    return $result->decode_response()["data"];
+    return !empty($result->decode_response()["data"]);
   }
 
   public function getPeopleProfile($websiteId, $peopleId) {
