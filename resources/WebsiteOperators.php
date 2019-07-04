@@ -35,14 +35,6 @@ class CrispWebsiteOperators
     );
     return $result->decode_response()["data"];
   }
-
-  public function createOne($websiteId, $operatorId, $params) {
-    $result = $this->crisp->_rest->post(
-      "website/$websiteId/operator/$operatorId",
-      $params
-    );
-    return $result->decode_response()["data"];
-  }
 }
 
 ?>

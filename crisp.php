@@ -6,15 +6,15 @@
  * Copyright: 2018, Crisp IM
  */
 
-require __DIR__ . '/ressources/UserProfile.php';
-require __DIR__ . '/ressources/Website.php';
-require __DIR__ . '/ressources/WebsiteSettings.php';
-require __DIR__ . '/ressources/WebsiteVerify.php';
-require __DIR__ . '/ressources/WebsiteOperators.php';
-require __DIR__ . '/ressources/WebsiteVisitors.php';
-require __DIR__ . '/ressources/WebsiteConversations.php';
-require __DIR__ . '/ressources/WebsitePeople.php';
-require __DIR__ . '/ressources/PluginSubscriptions.php';
+require __DIR__ . '/resources/UserProfile.php';
+require __DIR__ . '/resources/Website.php';
+require __DIR__ . '/resources/WebsiteSettings.php';
+require __DIR__ . '/resources/WebsiteVerify.php';
+require __DIR__ . '/resources/WebsiteOperators.php';
+require __DIR__ . '/resources/WebsiteVisitors.php';
+require __DIR__ . '/resources/WebsiteConversations.php';
+require __DIR__ . '/resources/WebsitePeople.php';
+require __DIR__ . '/resources/PluginSubscriptions.php';
 
 class Crisp
 {

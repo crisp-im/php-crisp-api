@@ -94,7 +94,6 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   * **Get All Operators**: `CrispClient->websiteOperators->getList(websiteId)`
   * **Get One Operators**: `CrispClient->websiteOperators->getOne(websiteId, operatorId)`
   * **Delete One Operators**: `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
-  * **Create An Operator**: `CrispClient->websiteOperators->createOne(websiteId, parameters)`
   * **Update An Operator**: `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
 * **Website Visitors**
   * **List Visitors**: `CrispClient->websiteVisitors->listVisitors(websiteId, page)`
