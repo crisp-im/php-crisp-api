@@ -6,7 +6,6 @@
  * Copyright: 2018, Crisp IM
  */
 
-require __DIR__ . '/ressources/UserSession.php';
 require __DIR__ . '/ressources/UserProfile.php';
 require __DIR__ . '/ressources/Website.php';
 require __DIR__ . '/ressources/WebsiteSettings.php';
@@ -34,7 +33,6 @@ class Crisp
       return json_decode($data, TRUE);
     });
 
-    $this->userSession          = new CrispUserSession($this);
     $this->userProfile          = new CrispUserProfile($this);
     $this->website              = new CrispWebsite($this);
     $this->websiteSettings      = new CrispWebsiteSettings($this);
