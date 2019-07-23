@@ -79,6 +79,25 @@ class CrispWebsiteConversations
     return $result->decode_response()["data"];
   }
 
+  public function getRouting(
+    $websiteId, $sessionId) {
+
+    $result = $this->crisp->_rest->get(
+      "website/$websiteId/conversation/$sessionId/routing"
+    );
+    return $result->decode_response()["data"];
+  }
+
+  public function assignRouting(
+    $websiteId, $sessionId, $routing) {
+
+    $result = $this->crisp->_rest->patch(
+      "website/$websiteId/conversation/$sessionId/routing",
+      json_encode($routing)
+    );
+    return $result->decode_response()["data"];
+  }
+
   public function getMeta(
     $websiteId, $sessionId) {
 
