@@ -55,6 +55,8 @@ echo "Hello $firstName";
   * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
   * **Set Conversation State:**: `CrispClient->websiteConversations->setState(websiteId, sessionId, state)`
+  * **Get Conversation Routing**: `CrispClient->websiteConversations->getRouting(websiteId, sessionId)`
+  * **Assign Conversation Routing**:`CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)`
   * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
   * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
