@@ -66,9 +66,9 @@ echo "Hello $firstName";
 The **PeopleID** argument can be an **email** or the **PeopleID**.
 
   *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
-  *  **Check By Segments**: `CrispClient->websitePeople->findBySegments(websiteId, segments)`
+  *  **Find With Search Text (Name, Email, Segments)**: `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
-  *  **Check  If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
+  *  **Check If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
   *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, peopleId, page)`
   *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`

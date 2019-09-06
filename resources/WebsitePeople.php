@@ -20,15 +20,9 @@ class CrispWebsitePeople
     return $result->decode_response()["data"];
   }
 
-  public function findBySegments($websiteId, $segments) {
-    $searchFilter = [];
-
-    foreach ($segments as $segment){
-      $searchFilter[] = ["model" => "people","criterion" => "segments","operator" => "eq","query" => [$segment]];
-    }
-
+  public function findWithSearchText($websiteId, $searchText) {
     $result = $this->crisp->_rest->get(
-      "website/$websiteId/people/profiles?search_filter=".json_encode($searchFilter)
+      "website/$websiteId/people/profiles?search_text=".urlencode($searchText)
     );
     return $result->decode_response()["data"];
   }
