@@ -163,4 +163,15 @@ class WebsiteConversations extends Resource
         );
         return $this->formatResponse($result);
     }
+
+    public function scheduleReminder(
+        $websiteId, $sessionId, $params
+    ) {
+
+        $result = $this->crisp->_rest->post(
+            "website/$websiteId/conversation/$sessionId/reminder",
+            json_encode($params)
+        );
+        return $this->formatResponse($result);
+    }
 }
