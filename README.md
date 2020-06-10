@@ -62,9 +62,7 @@ echo "Hello $firstName";
   * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
   * **Schedule a Reminder in a Conversation:**: `CrispClient->scheduleReminder(websiteId, sessionId, params)`
 
-* **Website People** (These are your End Users)
-
-The **PeopleID** argument can be an **email** or the **PeopleID**.
+* **Website People** (These are your End Users). The **PeopleID** argument can be an **email** or the **PeopleID**.
 
   *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)`
