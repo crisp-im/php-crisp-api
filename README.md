@@ -59,8 +59,8 @@ echo "Hello $firstName";
   * **Assign Conversation Routing**:`CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)`
   * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
-  * **Schedule a Reminder in a Conversation:**: `CrispClient->scheduleReminder(websiteId, sessionId, params)`
+  * **Acknowledge Messages:**: `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)`
+  * **Schedule a Reminder in a Conversation:**: `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)`
 
 * **Website People** (These are your End Users)
 
