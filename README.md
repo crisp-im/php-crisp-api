@@ -69,7 +69,7 @@ echo "Hello $firstName";
   *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
   *  **Check If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, peopleId, page)`
+  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, page)`
   *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
   *  **Save A Profile**: `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
