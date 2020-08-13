@@ -9,7 +9,7 @@
 class CrispPluginSubscriptions
 {
 
-  public function __construct($parent) {
+  public function __construct(Crisp $parent) {
     $this->crisp = $parent;
   }
 
