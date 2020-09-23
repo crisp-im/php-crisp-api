@@ -131,6 +131,15 @@ class CrispWebsitePeople
     );
     return $result->decode_response()["data"];
   }
+
+  public function updatePeopleSubscriptionStatus($websiteId, $peopleId, $data) {
+    $result = $this->crisp->_rest->patch(
+      "website/$websiteId/people/subscription/$peopleId",
+      json_encode($data)
+    );
+
+    return $result->decode_response();
+  }
 }
 
 ?>
