@@ -124,6 +124,13 @@ class CrispWebsitePeople
 
     return $result->decode_response();
   }
+
+  public function getPeopleSubscriptionStatus($websiteId, $peopleId) {
+    $result = $this->crisp->_rest->get(
+      "website/$websiteId/people/subscription/$peopleId"
+    );
+    return $result->decode_response()["data"];
+  }
 }
 
 ?>
