@@ -134,4 +134,21 @@ class WebsitePeople extends Resource
         );
         return $this->formatResponse($result);
     }
+
+    public function getPeopleSubscriptionStatus($websiteId, $peopleId)
+    {
+        $result = $this->crisp->_rest->get(
+            "website/$websiteId/people/subscription/$peopleId"
+        );
+        return $this->formatResponse($result);
+    }
+
+    public function updatePeopleSubscriptionStatus($websiteId, $peopleId, $data)
+    {
+        $result = $this->crisp->_rest->patch(
+            "website/$websiteId/people/subscription/$peopleId",
+            json_encode($data)
+        );
+        return $this->formatResponse($result);
+    }
 }

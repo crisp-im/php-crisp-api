@@ -79,6 +79,8 @@ echo "Hello $firstName";
   *  **Add Event**: `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
   *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
+  *  **Get Subscription Status**: `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)`
+  *  **Update Subscription Status**: `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
 * **Website Base**
   * **Create A Website**: `CrispClient->website->create(params)`
