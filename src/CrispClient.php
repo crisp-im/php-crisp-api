@@ -8,6 +8,7 @@
 
 namespace Crisp;
 
+use Crisp\Resources\Buckets;
 use Crisp\Resources\PluginSubscriptions;
 use Crisp\Resources\UserProfile;
 use Crisp\Resources\Website;
@@ -36,6 +37,7 @@ class CrispClient
             return json_decode($data, true);
         });
 
+        $this->buckets              = new Buckets($this);
         $this->userProfile          = new UserProfile($this);
         $this->website              = new Website($this);
         $this->websiteSettings      = new WebsiteSettings($this);

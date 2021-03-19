@@ -12,7 +12,7 @@ To authenticate against the API, generate your session identifier and session ke
 
 Then, add authentication parameters to your `client` instance right after you create it:
 
-```js
+```php
 require __DIR__ . '/vendor/autoload.php';
 $CrispClient = new \Crisp\CrispClient;
 

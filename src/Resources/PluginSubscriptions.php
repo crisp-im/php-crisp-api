@@ -1,6 +1,6 @@
 <?php
 /*
- * Bundle: Crisp / PluginSubscription
+ * Bundle: Crisp / PluginSubscriptions
  * Project: Crisp - PHP API
  * Author: Baptiste Jamin http://jamin.me/
  * Copyright: 2018, Crisp IM
