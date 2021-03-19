@@ -14,7 +14,6 @@ try {
 
     echo "Hello $firstName";
 } catch (\Crisp\CrispException $exception) {
-    var_dump($exception->getResponse());
+    var_dump($exception->getError());
     var_dump($exception->getInfo());
 }
-

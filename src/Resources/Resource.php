@@ -19,7 +19,8 @@ abstract class Resource
     protected function formatResponse($response)
     {
         $responseData = $response->decode_response();
-        if ($responseData['error']) {
+
+        if (!isset($response->info->http_code) || $response->info->http_code >= 400) {
             throw new CrispException($response->info, $responseData);
         }
         return $responseData['data'];
