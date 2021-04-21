@@ -51,19 +51,19 @@ class CrispClient
 
     public function setRestHost($host)
     {
-        $this->_rest->set_option('base_url', $host);
+        $this->_rest->set_option("base_url", $host);
     }
 
     public function authenticate($identifier, $key)
     {
-        $this->_rest->set_option('username', $identifier);
-        $this->_rest->set_option('password', $key);
+        $this->_rest->set_option("username", $identifier);
+        $this->_rest->set_option("password", $key);
     }
 
     public function setTier($tier)
     {
         $headers = $this->_rest->options["headers"];
         $headers["X-Crisp-Tier"] = $tier;
-        $this->_rest->set_option('headers', $headers);
+        $this->_rest->set_option("headers", $headers);
     }
 }

@@ -13,7 +13,11 @@ abstract class Resource
 
     protected function prepareQuery($query)
     {
-        return (is_array($query) && count($query) > 0) ? '?'.http_build_query($query) : '';
+        return (
+            is_array($query) && count($query) > 0
+        )
+            ? "?".http_build_query($query, null, "&", PHP_QUERY_RFC3986)
+            : "";
     }
 
     protected function formatResponse($response)
@@ -23,6 +27,6 @@ abstract class Resource
         if (!isset($response->info->http_code) || $response->info->http_code >= 400) {
             throw new CrispException($response->info, $responseData);
         }
-        return $responseData['data'];
+        return $responseData["data"];
     }
 }
