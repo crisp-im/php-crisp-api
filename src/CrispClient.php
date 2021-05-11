@@ -21,7 +21,7 @@ use Crisp\Resources\WebsiteVisitors;
 
 class CrispClient
 {
-  //Rest default configuration
+    // Rest default configuration
     public $DEFAULT_REST_HOST = "https://api.crisp.chat";
     public $DEFAULT_REST_BASE_PATH = "/v1/";
 

@@ -40,7 +40,7 @@ class WebsiteConversations extends Resource
             }
         }
 
-        if ($query == []) {
+        if ($query != []) {
             $resourceUrl = "website/$websiteId/conversations/$page{$this->prepareQuery($query)}";
         } else {
             $resourceUrl = "website/$websiteId/conversations/$page";
