@@ -158,6 +158,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    public function getOriginalMessage($websiteId, $sessionId, $originalId)
+    {
+        $result = $this->crisp->_rest->get(
+            "website/$websiteId/conversation/$sessionId/original/$originalId"
+        );
+        return $this->formatResponse($result);
+    }
+
     public function setState($websiteId, $sessionId, $state)
     {
         $result = $this->crisp->_rest->patch(
