@@ -87,11 +87,22 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
-    public function getMessages($websiteId, $sessionId)
+    public function getMessages($websiteId, $sessionId, $timestampBefore = "")
     {
-        $result = $this->crisp->_rest->get(
-            "website/$websiteId/conversation/$sessionId/messages"
-        );
+        $resourceUrl = "";
+        $query = [];
+
+        if ($timestampBefore != "") {
+            $query["timestamp_before"] = $timestampBefore;
+        }
+
+        if ($query != []) {
+            $resourceUrl = "website/$websiteId/conversation/$sessionId/messages{$this->prepareQuery($query)}";
+        } else {
+            $resourceUrl = "website/$websiteId/conversation/$sessionId/messages";
+        }
+
+        $result = $this->crisp->_rest->get($resourceUrl);
         return $this->formatResponse($result);
     }
 
