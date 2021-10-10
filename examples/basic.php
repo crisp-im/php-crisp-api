@@ -4,7 +4,7 @@ require '../vendor/autoload.php';
 
 $CrispClient = new \Crisp\CrispClient();
 
-// Get the keys from https://go.crisp.chat/account/token/
+// Get the keys with https://docs.crisp.chat/guides/rest-api/authentication/
 
 $CrispClient->authenticate(identifier, key);
 
