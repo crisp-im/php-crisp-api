@@ -19,9 +19,13 @@ To authenticate against the API, generate your session identifier and session ke
 
 Then, add authentication parameters to your `client` instance right after you create it:
 
-```js
+```php
 require __DIR__ . '/vendor/autoload.php';
-$CrispClient = new Crisp();
+$CrispClient = new \Crisp\CrispClient;
+
+// Make sure to use the correct tier if you are authenticating a plugin
+// eg. with a permanent token generated from Crisp Marketplace
+// $CrispClient->setTier("plugin");
 
 // Authenticate to API (identifier, key)
 // eg. $CrispClient->authenticate("7c3ef21c-1e04-41ce-8c06-5605c346f73e", "cc29e1a5086e428fcc6a697d5837a66d82808e65c5cce006fbf2191ceea80a0a");
@@ -37,7 +41,7 @@ $CrispClient->authenticate(identifier, key);
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
-$CrispClient = new Crisp();
+$CrispClient = new \Crisp\CrispClient;
 
 $CrispClient->authenticate(identifier, key);
 
@@ -53,11 +57,13 @@ echo "Hello $firstName";
 ### Website
 
 * **Website Conversations**
-  * **Get Conversation List**: `CrispClient->websiteConversations->getList(websiteId, page)`
+  * **Get Conversations List**: `CrispClient->websiteConversations->getList(websiteId, page)`
+  * **Find Conversations With Search**: `CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)`
   * **Get A Conversation**: `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
   * **Get Conversation Metadata**: `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
   * **Update Conversation Metadata**:`CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
-  * **Get a Messages in a Conversation**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, query)`
+  * **Get Conversation Messages**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore)`
+  * **Get Conversation Original Message**:`CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId)`
   * **Create a Conversation**: `CrispClient->websiteConversations->create(websiteId)`
   * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
   * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
@@ -66,18 +72,17 @@ echo "Hello $firstName";
   * **Assign Conversation Routing**:`CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)`
   * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
   * **Delete Conversation:**:`CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `CrispClient->acknowledgeMessages(websiteId, sessionId, fingerprints)`
+  * **Acknowledge Messages:**: `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)`
+  * **Schedule a Reminder in a Conversation:**: `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)`
 
-* **Website People** (These are your End Users)
-
-The **PeopleID** argument can be an **email** or the **PeopleID**.
+* **Website People** (These are your End Users). The **PeopleID** argument can be an **email** or the **PeopleID**.
 
   *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
   *  **Find With Search Text (Name, Email, Segments)**: `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)`
   *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
   *  **Check If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
   *  **Get People Profile**: `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, peopleId, page)`
+  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, page)`
   *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
   *  **Save A Profile**: `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
   *  **Update A Profile**: `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
@@ -87,6 +92,8 @@ The **PeopleID** argument can be an **email** or the **PeopleID**.
   *  **Add Event**: `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
   *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
   *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
+  *  **Get Subscription Status**: `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)`
+  *  **Update Subscription Status**: `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
 
 * **Website Base**
   * **Create A Website**: `CrispClient->website->create(params)`
