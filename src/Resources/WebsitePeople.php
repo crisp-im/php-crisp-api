@@ -126,9 +126,18 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
-    public function updatePeopleData($websiteId, $peopleId, $data)
+    public function savePeopleData($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->_rest->put(
+            "website/$websiteId/people/data/$peopleId",
+            json_encode($data)
+        );
+        return $this->formatResponse($result);
+    }
+
+    public function updatePeopleData($websiteId, $peopleId, $data)
+    {
+        $result = $this->crisp->_rest->patch(
             "website/$websiteId/people/data/$peopleId",
             json_encode($data)
         );
