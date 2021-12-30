@@ -98,11 +98,11 @@ Thus, it is straightforward to look for them in the library while reading the [R
 
 * **Website People** (These are your End Users). 
 
-  *  **Find By Email** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+  * **Find By Email** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
     * `CrispClient->websitePeople->findByEmail(websiteId, email)` 
-  *  **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+  * **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
     * `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)` 
-  *  **Create A New Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
+  * **Create A New Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
     * `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)` 
   * ⭐ **Check If Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
     * `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)` 
