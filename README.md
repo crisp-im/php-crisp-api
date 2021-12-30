@@ -116,23 +116,23 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)` 
   * ⭐ **Update A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
     * `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)` 
-  *  **List Conversations** [`user`, `plugin`] [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
+  * **List Conversations** [`user`, `plugin`] [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
     * `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)` 
-  *  **List Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
+  * **List Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
     * `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)` 
-  *  **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
+  * **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
     * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)` 
-  *  **Add Event** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
+  * **Add Event** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
     * `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)` 
-  *  **Get Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-data)
+  * **Get Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-data)
     * `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)` 
-  *  **Save Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-data)
+  * **Save Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-data)
     * `CrispClient->websitePeople->savePeopleData(websiteId, peopleId, params)` 
-  *  **Update Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-data)
+  * **Update Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-data)
     * `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)` 
-  *  **Get Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-subscription-status)
+  * **Get Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-subscription-status)
     * `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)` 
-  *  **Update Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-subscription-status)
+  * **Update Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-subscription-status)
     * `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)` 
 
 _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
