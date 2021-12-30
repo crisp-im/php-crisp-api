@@ -49,75 +49,139 @@ echo "Hello $firstName";
 
 ### Available resources & methods
 
+
+All the available Crisp API resources are fully implemented. **Programmatic methods names are named after their label name in the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/)**.
+
+Thus, it is straightforward to look for them in the library while reading the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/).
+
 *Where you see `params` it is a plain Array object, e.g. `[email => 'foo@example.com' ]`*
+
+**⚠️ Note that, depending on your authentication token tier, which is either `user` or `plugin`, you may not be allowed to use all methods from the library. When in doubt, refer to the library method descriptions below. Most likely, you are using a `plugin` token.**
 
 ### Website
 
 * **Website Conversations**
-  * **Get Conversations List**: `CrispClient->websiteConversations->getList(websiteId, page)`
-  * **Find Conversations With Search**: `CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)`
-  * **Get A Conversation**: `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
-  * **Get Conversation Metadata**: `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
-  * **Update Conversation Metadata**:`CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
-  * **Get Conversation Messages**: `CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore)`
-  * **Get Conversation Original Message**:`CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId)`
-  * **Create a Conversation**: `CrispClient->websiteConversations->create(websiteId)`
-  * **Initiate a Conversation**: `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
-  * **Send a Conversation**: `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
-  * **Set Conversation State:**: `CrispClient->websiteConversations->setState(websiteId, sessionId, state)`
-  * **Get Conversation Routing**: `CrispClient->websiteConversations->getRouting(websiteId, sessionId)`
-  * **Assign Conversation Routing**:`CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)`
-  * **Block Conversation:**: `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
-  * **Delete Conversation:**:`CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
-  * **Acknowledge Messages:**: `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)`
-  * **Schedule a Reminder in a Conversation:**: `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)`
+  * ⭐ **List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
+    * `CrispClient->websiteConversations->getList(websiteId, page)` 
+  * ⭐ **Create a Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
+    * `CrispClient->websiteConversations->create(websiteId)` 
+  * **Initiate a Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-a-conversation-with-existing-session)
+    * `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)` 
+  * **Find Conversations With Search** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
+    * `CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)` 
+  * ⭐ **Get A Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation)
+    * `CrispClient->websiteConversations->getOne(websiteId, sessionId)` 
+  * ⭐ **Send a Message in Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation)
+    * `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)` 
+  * ⭐ **Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
+    * `CrispClient->websiteConversations->getMeta(websiteId, sessionId)` 
+  * ⭐ **Update Conversation Metas** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
+    * `CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)` 
+  * ⭐ **Get Messages in Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
+    * `CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore)` 
+  * **Get Conversation Original Message** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
+    * `CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId)` 
+  * ⭐ **Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state)
+    * `CrispClient->websiteConversations->setState(websiteId, sessionId, state)` 
+  * **Get Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
+    * `CrispClient->websiteConversations->getRouting(websiteId, sessionId)` 
+  * **Assign Conversation Routing** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
+    * `CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)` 
+  * **Block Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
+    * `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)` 
+  * **Delete Conversation:** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
+    * `CrispClient->websiteConversations->deleteOne(websiteId, sessionId)` 
+  * **Acknowledge Messages as Read:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
+    * `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)` 
+  * **Schedule a Reminder in a Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
+    * `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)` 
 
-* **Website People** (These are your End Users). The **PeopleID** argument can be an **email** or the **PeopleID**.
+* **Website People** (These are your End Users). 
 
-  *  **Find By Email**: `CrispClient->websitePeople->findByEmail(websiteId, email)`
-  *  **Find With Search Text (Name, Email, Segments)**: `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)`
-  *  **Create A New Profile**: `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
-  *  **Check If Exists**: `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
-  *  **Get People Profile**: `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
-  *  **List People Profiles**: `CrispClient->websitePeople->listPeopleProfiles(websiteId, page)`
-  *  **Remove A Profile**: `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
-  *  **Save A Profile**: `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
-  *  **Update A Profile**: `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
-  *  **List Conversations** `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)`
-  *  **List Segments**: `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)`
-  *  **List Events**: `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)`
-  *  **Add Event**: `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
-  *  **Get Data**: `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
-  *  **Save Data**: `CrispClient->websitePeople->savePeopleData(websiteId, peopleId, params)`
-  *  **Update Data**: `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
-  *  **Get Subscription Status**: `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)`
-  *  **Update Subscription Status**: `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
+  * **Find By Email** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+    * `CrispClient->websitePeople->findByEmail(websiteId, email)` 
+  * **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+    * `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)` 
+  * **Create A New Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
+    * `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)` 
+  * ⭐ **Check If Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
+    * `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)` 
+  * ⭐ **Get People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+    * `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)` 
+  * ⭐ **List People Profiles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+    * `CrispClient->websitePeople->listPeopleProfiles(websiteId, page)` 
+  * ⭐ **Remove A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile)
+    * `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)` 
+  * ⭐ **Save A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-profile)
+    * `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)` 
+  * ⭐ **Update A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
+    * `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)` 
+  * **List Conversations** [`user`, `plugin`] [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
+    * `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)` 
+  * **List Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
+    * `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)` 
+  * **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
+    * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)` 
+  * **Add Event** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
+    * `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)` 
+  * **Get Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-data)
+    * `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)` 
+  * **Save Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-data)
+    * `CrispClient->websitePeople->savePeopleData(websiteId, peopleId, params)` 
+  * **Update Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-data)
+    * `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)` 
+  * **Get Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-subscription-status)
+    * `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)` 
+  * **Update Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-subscription-status)
+    * `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)` 
+
+_👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Base**
-  * **Create A Website**: `CrispClient->website->create(params)`
-  * **Create User Account**: `CrispClient->website->delete(websiteId)`
+  * **Create A Website** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-website)
+    * `CrispClient->website->create(params)` 
+  * **Delete A Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-a-website)
+    * `CrispClient->website->delete(websiteId)` 
 * **Website Settings**
-  * **Get Website Settings**: `CrispClient->websiteSettings->get(websiteId)`
-  * **Update Website Settings**: `CrispClient->websiteSettings->get(params)`
+  * **Get Website Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-settings)
+    * `CrispClient->websiteSettings->get(websiteId)` 
+  * **Update Website Settings** [`user`, `plugin`][Reference](https://docs.crisp.chat/references/rest-api/v1/#update-website-settings): 
+    * `CrispClient->websiteSettings->get(params)` 
 * **Website Verify**
-  * **Get Verify Settings**: `CrispClient->websiteVerify->getSettings(websiteId)`
-  * **Update Verify Settings**: `CrispClient->websiteVerify->updateSettings(websiteId, params)`
-  * **Get Verify Key**: `CrispClient->websiteVerify->getKey(websiteId)`
-  * **Roll Key**: `CrispClient->websiteVerify->rollKey(websiteId)`
+  * **Get Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings)
+    * `CrispClient->websiteVerify->getSettings(websiteId)` 
+  * **Update Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-verify-settings)
+    * `CrispClient->websiteVerify->updateSettings(websiteId, params)` 
+  * **Get Verify Key** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-key)
+    * `CrispClient->websiteVerify->getKey(websiteId)` 
+  * **Roll Key** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#roll-verify-key)
+    * `CrispClient->websiteVerify->rollKey(websiteId)` 
 * **Website Operators**
-  * **Get All Operators**: `CrispClient->websiteOperators->getList(websiteId)`
-  * **Get One Operators**: `CrispClient->websiteOperators->getOne(websiteId, operatorId)`
-  * **Delete One Operators**: `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
-  * **Update An Operator**: `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
+  * **Get All Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operators)
+    * `CrispClient->websiteOperators->getList(websiteId)` 
+  * **Get One Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-website-operator)
+    * `CrispClient->websiteOperators->getOne(websiteId, operatorId)` 
+  * **Delete One Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website)
+    * `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)` 
+  * **Update An Operator** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership)
+    * `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)` 
 * **Website Visitors**
-  * **List Visitors**: `CrispClient->websiteVisitors->listVisitors(websiteId, page)`
+  * **List Visitors** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-visitors)
+    * `CrispClient->websiteVisitors->listVisitors(websiteId, page)` 
 
 ### Plugins
 * **Plugin Subscriptions**
-  * **List All Active Subsciptions**: `CrispClient->pluginSubscriptions->listAllActiveSubscriptions()`
-  * **Get All Subscriptions For Website**: `CrispClient->pluginSubscriptions->listSubscriptionsForWebsite(websiteId)`
-  * **Get Subscription Details**: `CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId)`
-  * **Subscribe Website To Plugin**: `CrispClient->pluginSubscriptions->subscribeWebsiteToPlugin(websiteId, pluginId)`
-  * **Unsubscribe Plguin From Website**: `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)`
-  * **Get Subscription Settings**: `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)`
-  * **Save Subscription Settings**: `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)`
+  * **List All Active Subsciptions** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
+    * `CrispClient->pluginSubscriptions->listAllActiveSubscriptions()` 
+  * **Get All Subscriptions For Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-subscriptions-for-a-website)
+    * `CrispClient->pluginSubscriptions->listSubscriptionsForWebsite(websiteId)` 
+  * **Get Subscription Details** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
+    * `CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId)` 
+  * **Subscribe Website To Plugin** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plugin)
+    * `CrispClient->pluginSubscriptions->subscribeWebsiteToPlugin(websiteId, pluginId)` 
+  * **Unsubscribe Plugin From Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plugin-from-website)
+    * `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)` 
+  * **Get Subscription Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-settings)
+    * `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)` 
+  * **Save Subscription Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-subscription-settings)
+    * `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)` 
