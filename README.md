@@ -75,21 +75,21 @@ Thus, it is straightforward to look for them in the library while reading the [R
     * `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)` 
   * ⭐ **Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
     * `CrispClient->websiteConversations->getMeta(websiteId, sessionId)` 
-  * ⭐ **Update Conversation Metas** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
+  * ⭐ **Update Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
     * `CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)` 
   * ⭐ **Get Messages in Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
     * `CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore)` 
-  * **Get Conversation Original Message** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
+  * **Get Conversation Original Message** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
     * `CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId)` 
   * ⭐ **Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state)
     * `CrispClient->websiteConversations->setState(websiteId, sessionId, state)` 
   * **Get Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
     * `CrispClient->websiteConversations->getRouting(websiteId, sessionId)` 
-  * **Assign Conversation Routing** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
+  * **Assign Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
     * `CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)` 
   * **Block Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
     * `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)` 
-  * **Delete Conversation:** [`user`, `plugin`]:[Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
+  * **Delete Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
     * `CrispClient->websiteConversations->deleteOne(websiteId, sessionId)` 
   * **Acknowledge Messages as Read:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
     * `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)` 
