@@ -52,7 +52,7 @@ echo "Hello $firstName";
 
 All the available Crisp API resources are fully implemented. **Programmatic methods names are named after their label name in the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/)**.
 
-Thus, it is straightforward to look for them in the library while reading the [REST API Reference](https://docs.crisp.chat/references/rest-api/v1/).
+All methods that you will most likely need when building a Crisp integration are prefixed with a star symbol (⭐).
 
 *Where you see `params` it is a plain Array object, e.g. `[email => 'foo@example.com' ]`*
 
@@ -96,8 +96,7 @@ Thus, it is straightforward to look for them in the library while reading the [R
   * **Schedule a Reminder in a Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
     * `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)` 
 
-* **Website People** (These are your End Users). 
-
+* **Website People** _(these are your end-users)_
   * **Find By Email** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
     * `CrispClient->websitePeople->findByEmail(websiteId, email)` 
   * **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
