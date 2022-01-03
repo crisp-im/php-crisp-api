@@ -62,15 +62,15 @@ All methods that you will most likely need when building a Crisp integration are
 
 * **Website Conversations**
   * ⭐ **List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
-    * `CrispClient->websiteConversations->getList(websiteId, page)`
+    * `CrispClient->websiteConversations->getList(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websiteConversations->getList(websiteId, page);
+      CrispClient->websiteConversations->getList(websiteId, pageNumber);
       ```
       </details>
 
@@ -80,7 +80,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       
-      CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated);
+      CrispClient->websiteConversations->findWithSearch(websiteId, pageNumber, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated);
       ```
       </details>
  
@@ -121,15 +121,15 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
  
   * **Find Conversations With Search** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
-    * `CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)`
+    * `CrispClient->websiteConversations->findWithSearch(websiteId, pageNumber, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websiteConversations->getList(websiteId, page);
+      CrispClient->websiteConversations->getList(websiteId, pageNumber);
       ```
       </details>
 
@@ -139,7 +139,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       
-      CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated);
+      CrispClient->websiteConversations->findWithSearch(websiteId, pageNumber, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated);
       ```
       </details>
  
@@ -580,7 +580,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
  
   * ⭐ **List People Profiles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
-    * `CrispClient->websitePeople->listPeopleProfiles(websiteId, page)`
+    * `CrispClient->websitePeople->listPeopleProfiles(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
@@ -656,16 +656,16 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
  
   * **List Conversations** [`user`, `plugin`] [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
-    * `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page)`
+    * `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, pageNumber);
       ```
       </details>
 
@@ -676,21 +676,21 @@ All methods that you will most likely need when building a Crisp integration are
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
-      CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, pageNumber);
       ```
       </details>
  
   * **List Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
-    * `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page)`
+    * `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, pageNumber);
       ```
       </details>
 
@@ -701,21 +701,21 @@ All methods that you will most likely need when building a Crisp integration are
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
-      CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, pageNumber);
       ```
       </details>
  
   * **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
-    * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page)`
+    * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber);
       ```
       </details>
 
@@ -726,7 +726,7 @@ All methods that you will most likely need when building a Crisp integration are
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       
-      CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page);
+      CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber);
       ```
       </details>
  
@@ -1199,15 +1199,15 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
  
 * **Website Visitors**
   * **List Visitors** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-visitors)
-    * `CrispClient->websiteVisitors->listVisitors(websiteId, page)`
+    * `CrispClient->websiteVisitors->listVisitors(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-      $page = 1;
+      $pageNumber = 1;
       
-      CrispClient->websiteVisitors->listVisitors(websiteId, page);
+      CrispClient->websiteVisitors->listVisitors(websiteId, pageNumber);
       ```
       </details>
 
@@ -1217,7 +1217,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
       
-      CrispClient->websiteVisitors->listVisitors(websiteId, page);
+      CrispClient->websiteVisitors->listVisitors(websiteId, pageNumber);
       ```
       </details>
  

@@ -27,7 +27,7 @@ class WebsiteConversations extends Resource
         ["orderDateUpdated", "order_date_updated"]
     ];
 
-    public function findWithSearch($websiteId, $page = 1, $searchQuery = "", $searchType = "", $searchOperator = "", $includeEmpty = "", $filterUnread = "", $filterResolved = "", $filterNotResolved = "", $filterMention = "", $filterAssigned = "", $filterUnassigned = "", $filterDateStart = "", $filterDateEnd = "", $orderDateCreated = "", $orderDateUpdated = "")
+    public function findWithSearch($websiteId, $pageNumber = 1, $searchQuery = "", $searchType = "", $searchOperator = "", $includeEmpty = "", $filterUnread = "", $filterResolved = "", $filterNotResolved = "", $filterMention = "", $filterAssigned = "", $filterUnassigned = "", $filterDateStart = "", $filterDateEnd = "", $orderDateCreated = "", $orderDateUpdated = "")
     {
         $resourceUrl = "";
         $query = [];
@@ -41,18 +41,18 @@ class WebsiteConversations extends Resource
         }
 
         if ($query != []) {
-            $resourceUrl = "website/$websiteId/conversations/$page{$this->prepareQuery($query)}";
+            $resourceUrl = "website/$websiteId/conversations/$pageNumber{$this->prepareQuery($query)}";
         } else {
-            $resourceUrl = "website/$websiteId/conversations/$page";
+            $resourceUrl = "website/$websiteId/conversations/$pageNumber";
         }
 
         $result = $this->crisp->_rest->get($resourceUrl);
         return $this->formatResponse($result);
     }
 
-    public function getList($websiteId, $page = 1)
+    public function getList($websiteId, $pageNumber = 1)
     {
-        return $this->findWithSearch($websiteId, $page);
+        return $this->findWithSearch($websiteId, $pageNumber);
     }
 
     public function create($websiteId)

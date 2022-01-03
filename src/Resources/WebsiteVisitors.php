@@ -10,10 +10,10 @@ namespace Crisp\Resources;
 
 class WebsiteVisitors extends Resource
 {
-    public function listVisitors($websiteId, $page = 1)
+    public function listVisitors($websiteId, $pageNumber = 1)
     {
         $result = $this->crisp->_rest->get(
-            "website/$websiteId/visitors/list/$page"
+            "website/$websiteId/visitors/list/$pageNumber"
         );
         return $this->formatResponse($result);
     }

@@ -51,10 +51,10 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
-    public function listPeopleProfiles($websiteId, $page)
+    public function listPeopleProfiles($websiteId, $pageNumber)
     {
         $result = $this->crisp->_rest->get(
-            "website/$websiteId/people/profiles/$page"
+            "website/$websiteId/people/profiles/$pageNumber"
         );
         return $this->formatResponse($result);
     }
@@ -85,18 +85,18 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
-    public function listPeopleSegments($websiteId, $page)
+    public function listPeopleSegments($websiteId, $pageNumber)
     {
         $result = $this->crisp->_rest->get(
-            "website/$websiteId/people/segments/$page"
+            "website/$websiteId/people/segments/$pageNumber"
         );
         return $this->formatResponse($result);
     }
 
-    public function listPeopleConversations($websiteId, $peopleId, $page)
+    public function listPeopleConversations($websiteId, $peopleId, $pageNumber)
     {
         $result = $this->crisp->_rest->get(
-            "website/$websiteId/people/conversations/$peopleId/list/$page"
+            "website/$websiteId/people/conversations/$peopleId/list/$pageNumber"
         );
         return $this->formatResponse($result);
     }
@@ -110,10 +110,10 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
-    public function listPeopleEvent($websiteId, $peopleId, $page)
+    public function listPeopleEvent($websiteId, $peopleId, $pageNumber)
     {
         $result = $this->crisp->_rest->get(
-            "website/$websiteId/people/events/$peopleId/list/$page"
+            "website/$websiteId/people/events/$peopleId/list/$pageNumber"
         );
         return $this->formatResponse($result);
     }
