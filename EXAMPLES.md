@@ -1,3 +1,20 @@
+https://docs.crisp.chat/references/rest-api/v1/#list-conversations
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$page = 1;
+
+CrispClient->websiteConversations->getList(websiteId, page);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+CrispClient->websiteConversations->create(websiteId);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#initiate-a-conversation-with-existing-session
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
@@ -10,8 +27,76 @@ CrispClient->websiteConversations->initiateOne(websiteId, sessionId);
 https://docs.crisp.chat/references/rest-api/v1/#list-conversations
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$page = 1;
 
 CrispClient->websiteConversations->findWithSearch(websiteId, page, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+CrispClient->websiteConversations->getOne(websiteId, sessionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+$message = [
+  "type" => "text",
+  "from" => "operator",
+  "origin" => "chat",
+  "content" => "Hey there! Need help?"
+];
+
+CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+CrispClient->websiteConversations->getMeta(websiteId, sessionId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+$params = [
+  "nickname" => "John Doe",
+  "email" => "john.doe@acme-inc.com",
+  "segments" => [
+    "happy",
+    "customer",
+    "love"
+  ],
+  "data" => [
+    "type" => "customer",
+    "signup" => "finished"
+  ]
+];
+
+CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+$timestampBefore = 1641206011000;
+
+CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore);
 
 =========================
 
@@ -22,6 +107,17 @@ $sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
 $originalId = "2325a3c0-9b47-4fc6-b00e-111b752e44cd";
 
 CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$sessionId = "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881";
+
+$state = true;
+
+CrispClient->websiteConversations->setState(websiteId, sessionId, state);
 
 =========================
 
@@ -104,6 +200,7 @@ CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params
 https://docs.crisp.chat/references/rest-api/v1/#get-people-profile
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$email = "john.doe@gmail.com";
 
 CrispClient->websitePeople->findByEmail(websiteId, email);
 
@@ -112,6 +209,7 @@ CrispClient->websitePeople->findByEmail(websiteId, email);
 https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$searchText = "Searched Text";
 
 CrispClient->websitePeople->findWithSearchText(websiteId, searchText);
 
@@ -132,10 +230,79 @@ CrispClient->websitePeople->createNewPeopleProfile(websiteId, params);
 
 =========================
 
+https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+
+CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#get-people-profile
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+
+CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$page = 1;
+
+CrispClient->websitePeople->listPeopleProfiles(websiteId, page);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+
+CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#save-people-profile
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+
+$params = [
+  "email" => "valerian@crisp.chat",
+  "person" => [
+    "nickname" => "Valerian Saliou"
+  ]
+];
+
+CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params);
+
+=========================
+
+https://docs.crisp.chat/references/rest-api/v1/#update-people-profile
+
+$websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+
+$params = [
+  "email" => "valerian@crisp.chat",
+  "person" => [
+    "nickname" => "Valerian Saliou"
+  ]
+];
+
+CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params);
+
+=========================
+
 https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+$page = 1;
 
 CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, page);
 
@@ -145,6 +312,7 @@ https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+$page = 1;
 
 CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, page);
 
@@ -154,6 +322,7 @@ https://docs.crisp.chat/references/rest-api/v1/#list-people-events
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
 $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
+$page = 1;
 
 CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, page);
 
@@ -308,7 +477,7 @@ CrispClient->websiteOperators->getList(websiteId);
 https://docs.crisp.chat/references/rest-api/v1/#get-a-website-operator
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-$operatorId = "6f3dca08-ee16-4758-8ac7-a7e07075130b";
+$operatorId = "558b4b6a-531d-4d8d-9718-73a4594b926c";
 
 CrispClient->websiteOperators->getOne(websiteId, operatorId);
 
@@ -317,7 +486,7 @@ CrispClient->websiteOperators->getOne(websiteId, operatorId);
 https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-$operatorId = "6f3dca08-ee16-4758-8ac7-a7e07075130b";
+$operatorId = "558b4b6a-531d-4d8d-9718-73a4594b926c";
 
 CrispClient->websiteOperators->deleteOne(websiteId, operatorId);
 
@@ -326,7 +495,7 @@ CrispClient->websiteOperators->deleteOne(websiteId, operatorId);
 https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
-$operatorId = "6f3dca08-ee16-4758-8ac7-a7e07075130b";
+$operatorId = "558b4b6a-531d-4d8d-9718-73a4594b926c";
 
 $parameters = [
   "role" => "owner",
@@ -340,6 +509,7 @@ CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters);
 https://docs.crisp.chat/references/rest-api/v1/#list-visitors
 
 $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+$page = 1;
 
 CrispClient->websiteVisitors->listVisitors(websiteId, page);
 
