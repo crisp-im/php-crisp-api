@@ -2,7 +2,7 @@
 
 The Crisp API PHP wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your PHP code.
 
-Copyright 2021 Crisp IM SARL. See LICENSE for copying information.
+Copyright 2021 Crisp IM SAS. See LICENSE for copying information.
 
 * **📝 Implements**: [REST API Reference (V1)](https://docs.crisp.chat/references/rest-api/v1/) at revision: 12/31/2017
 * **😘 Maintainer**: [@baptistejamin](https://github.com/baptistejamin)
