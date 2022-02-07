@@ -31,7 +31,7 @@ class WebsiteVerify extends Resource
         return $this->formatResponse($result);
     }
 
-    public function rollKey($websiteId, $params)
+    public function rollKey($websiteId)
     {
         $result = $this->crisp->_rest->post(
             "website/$websiteId/verify/settings",
