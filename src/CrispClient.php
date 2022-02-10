@@ -12,6 +12,7 @@ use Crisp\Resources\Buckets;
 use Crisp\Resources\PluginSubscriptions;
 use Crisp\Resources\UserProfile;
 use Crisp\Resources\Website;
+use Crisp\Resources\WebsiteAvailability;
 use Crisp\Resources\WebsiteConversations;
 use Crisp\Resources\WebsiteOperators;
 use Crisp\Resources\WebsitePeople;
@@ -44,6 +45,7 @@ class CrispClient
         $this->websiteVerify        = new WebsiteVerify($this);
         $this->websiteConversations = new WebsiteConversations($this);
         $this->websitePeople        = new WebsitePeople($this);
+        $this->websiteAvailability  = new WebsiteAvailability($this);
         $this->websiteOperators     = new WebsiteOperators($this);
         $this->websiteVisitors      = new WebsiteVisitors($this);
         $this->pluginSubscriptions  = new PluginSubscriptions($this);
