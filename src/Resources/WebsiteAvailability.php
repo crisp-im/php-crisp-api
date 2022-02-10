@@ -1,6 +1,6 @@
 <?php
 /*
- * Bundle: Crisp / WebsiteOperators
+ * Bundle: Crisp / WebsiteAvailability
  * Project: Crisp - PHP API
  * Author: Baptiste Jamin http://jamin.me/
  * Copyright: 2018, Crisp IM
