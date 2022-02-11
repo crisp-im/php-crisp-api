@@ -10,9 +10,15 @@ namespace Crisp\Resources;
 
 class WebsiteAvailability extends Resource
 {
-    public function get($websiteId)
+    public function getAvailabilityStatus($websiteId)
     {
         $result = $this->crisp->_rest->get("website/$websiteId/availability/status");
+        return $this->formatResponse($result);
+    }
+
+    public function listOperatorAvailabilities($websiteId)
+    {
+        $result = $this->crisp->_rest->get("website/$websiteId/availability/operators");
         return $this->formatResponse($result);
     }
 }
