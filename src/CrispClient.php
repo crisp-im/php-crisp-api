@@ -46,42 +46,52 @@ class CrispClient
      * @var Buckets
      */
     public $buckets;
+
     /**
      * @var UserProfile
      */
     public $userProfile;
+
     /**
      * @var Website
      */
     public $website;
+
     /**
      * @var WebsiteVerify
      */
     public $websiteVerify;
+
     /**
      * @var WebsiteSettings
      */
     public $websiteSettings;
+
     /**
      * @var WebsiteConversations
      */
     public $websiteConversations;
+
     /**
      * @var WebsitePeople
      */
     public $websitePeople;
+
     /**
      * @var WebsiteAvailability
      */
     public $websiteAvailability;
+
     /**
      * @var WebsiteOperators
      */
     public $websiteOperators;
+
     /**
      * @var WebsiteVisitors
      */
     public $websiteVisitors;
+
     /**
      * @var PluginSubscriptions
      */

@@ -11,6 +11,9 @@ abstract class Resource
     /** @var CrispClient */
     protected $crisp;
 
+    /**
+     * @param CrispClient $parent
+     */
     public function __construct($parent)
     {
         $this->crisp = $parent;
