@@ -12,13 +12,13 @@ class Website extends Resource
 {
     public function create($params)
     {
-        $result = $this->crisp->_rest->post("website", json_encode($params));
+        $result = $this->crisp->post("website", json_encode($params));
         return $this->formatResponse($result);
     }
 
     public function delete($websiteId)
     {
-        $result = $this->crisp->_rest->delete("website/$websiteId");
+        $result = $this->crisp->delete("website/$websiteId");
         return $this->formatResponse($result);
     }
 }

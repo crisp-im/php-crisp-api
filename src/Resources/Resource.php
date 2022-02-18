@@ -2,10 +2,15 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispClient;
 use Crisp\CrispException;
+use Psr\Http\Message\ResponseInterface;
 
 abstract class Resource
 {
+    /** @var CrispClient */
+    protected $crisp;
+
     public function __construct($parent)
     {
         $this->crisp = $parent;
@@ -20,12 +25,15 @@ abstract class Resource
             : "";
     }
 
-    protected function formatResponse($response)
+    /**
+     * @throws CrispException
+     */
+    protected function formatResponse(ResponseInterface $response)
     {
-        $responseData = $response->decode_response();
+        $responseData = json_decode($response->getBody(), true);
 
-        if (!isset($response->info->http_code) || $response->info->http_code >= 400) {
-            throw new CrispException($response->info, $responseData);
+        if ($response->getStatusCode() >= 400) {
+            throw new CrispException($response->getStatusCode(), $responseData);
         }
         return $responseData["data"];
     }

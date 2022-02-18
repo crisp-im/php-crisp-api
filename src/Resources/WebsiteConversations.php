@@ -46,7 +46,7 @@ class WebsiteConversations extends Resource
             $resourceUrl = "website/$websiteId/conversations/$pageNumber";
         }
 
-        $result = $this->crisp->_rest->get($resourceUrl);
+        $result = $this->crisp->get($resourceUrl);
         return $this->formatResponse($result);
     }
 
@@ -57,7 +57,7 @@ class WebsiteConversations extends Resource
 
     public function create($websiteId)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "website/$websiteId/conversation"
         );
         return $this->formatResponse($result);
@@ -65,7 +65,7 @@ class WebsiteConversations extends Resource
 
     public function getOne($websiteId, $sessionId)
     {
-        $result = $this->crisp->_rest->get(
+        $result = $this->crisp->get(
             "website/$websiteId/conversation/$sessionId"
         );
         return $this->formatResponse($result);
@@ -73,7 +73,7 @@ class WebsiteConversations extends Resource
 
     public function deleteOne($websiteId, $sessionId)
     {
-        $result = $this->crisp->_rest->delete(
+        $result = $this->crisp->delete(
             "website/$websiteId/conversation/$sessionId"
         );
         return $this->formatResponse($result);
@@ -81,7 +81,7 @@ class WebsiteConversations extends Resource
 
     public function initiateOne($websiteId, $sessionId)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "website/$websiteId/conversation/$sessionId/initiate"
         );
         return $this->formatResponse($result);
@@ -102,13 +102,13 @@ class WebsiteConversations extends Resource
             $resourceUrl = "website/$websiteId/conversation/$sessionId/messages";
         }
 
-        $result = $this->crisp->_rest->get($resourceUrl);
+        $result = $this->crisp->get($resourceUrl);
         return $this->formatResponse($result);
     }
 
     public function sendMessage($websiteId, $sessionId, $message)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "website/$websiteId/conversation/$sessionId/message",
             json_encode($message)
         );
@@ -117,7 +117,7 @@ class WebsiteConversations extends Resource
 
     public function acknowledgeMessages($websiteId, $sessionId, $read)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/conversation/$sessionId/read",
             json_encode($read)
         );
@@ -126,7 +126,7 @@ class WebsiteConversations extends Resource
 
     public function getRouting($websiteId, $sessionId)
     {
-        $result = $this->crisp->_rest->get(
+        $result = $this->crisp->get(
             "website/$websiteId/conversation/$sessionId/routing"
         );
         return $this->formatResponse($result);
@@ -134,7 +134,7 @@ class WebsiteConversations extends Resource
 
     public function assignRouting($websiteId, $sessionId, $routing)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/conversation/$sessionId/routing",
             json_encode($routing)
         );
@@ -143,7 +143,7 @@ class WebsiteConversations extends Resource
 
     public function getMeta($websiteId, $sessionId)
     {
-        $result = $this->crisp->_rest->get(
+        $result = $this->crisp->get(
             "website/$websiteId/conversation/$sessionId/meta"
         );
         return $this->formatResponse($result);
@@ -151,7 +151,7 @@ class WebsiteConversations extends Resource
 
     public function updateMeta($websiteId, $sessionId, $metas)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/conversation/$sessionId/meta",
             json_encode($metas)
         );
@@ -160,7 +160,7 @@ class WebsiteConversations extends Resource
 
     public function getOriginalMessage($websiteId, $sessionId, $originalId)
     {
-        $result = $this->crisp->_rest->get(
+        $result = $this->crisp->get(
             "website/$websiteId/conversation/$sessionId/original/$originalId"
         );
         return $this->formatResponse($result);
@@ -168,7 +168,7 @@ class WebsiteConversations extends Resource
 
     public function setState($websiteId, $sessionId, $state)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/conversation/$sessionId/state",
             json_encode(array("state" => $state))
         );
@@ -177,7 +177,7 @@ class WebsiteConversations extends Resource
 
     public function setBlock($websiteId, $sessionId, $blocked = true)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/conversation/$sessionId/block",
             json_encode($blocked)
         );
@@ -186,7 +186,7 @@ class WebsiteConversations extends Resource
 
     public function scheduleReminder($websiteId, $sessionId, $params)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "website/$websiteId/conversation/$sessionId/reminder",
             json_encode($params)
         );

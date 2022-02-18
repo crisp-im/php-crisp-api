@@ -12,25 +12,25 @@ class WebsiteOperators extends Resource
 {
     public function getList($websiteId)
     {
-        $result = $this->crisp->_rest->get("website/$websiteId/operators/list");
+        $result = $this->crisp->get("website/$websiteId/operators/list");
         return $this->formatResponse($result);
     }
 
     public function getOne($websiteId, $operatorId)
     {
-        $result = $this->crisp->_rest->get("website/$websiteId/operator/$operatorId");
+        $result = $this->crisp->get("website/$websiteId/operator/$operatorId");
         return $this->formatResponse($result);
     }
 
     public function deleteOne($websiteId, $operatorId)
     {
-        $result = $this->crisp->_rest->delete("website/$websiteId/operator/$operatorId");
+        $result = $this->crisp->delete("website/$websiteId/operator/$operatorId");
         return $this->formatResponse($result);
     }
 
     public function updateOne($websiteId, $operatorId, $params)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/operator/$operatorId",
             $params
         );
