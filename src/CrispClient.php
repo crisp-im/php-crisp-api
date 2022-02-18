@@ -136,6 +136,18 @@ class CrispClient
     /**
      * @throws ClientExceptionInterface
      */
+    public function put($path, $encodedData = '')
+    {
+        return $this->client->sendRequest(
+            $this
+                ->createBaseRequest('PUT', $path)
+                ->withBody($this->streamFactory->createStream($encodedData))
+        );
+    }
+
+    /**
+     * @throws ClientExceptionInterface
+     */
     public function get($path)
     {
         return $this->client->sendRequest(
