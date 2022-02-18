@@ -27,6 +27,8 @@ use Http\Discovery\Psr18ClientDiscovery;
 use Http\Message\MessageFactory;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\StreamFactoryInterface;
 
 class CrispClient
 {
@@ -85,11 +87,11 @@ class CrispClient
      */
     public $pluginSubscriptions;
 
-    public function __construct(HttpClient $client = null, MessageFactory $factory = null)
+    public function __construct(HttpClient $client = null, RequestFactoryInterface $requestFactory = null, StreamFactoryInterface $streamFactory = null)
     {
         $this->client  = $client ?: Psr18ClientDiscovery::find();
-        $this->requestFactory = $factory ?: Psr17FactoryDiscovery::findRequestFactory();
-        $this->streamFactory = $factory ?: Psr17FactoryDiscovery::findStreamFactory();
+        $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
+        $this->streamFactory = $streamFactory ?: Psr17FactoryDiscovery::findStreamFactory();
         $this->baseUrl = $this->DEFAULT_REST_HOST . $this->DEFAULT_REST_BASE_PATH;
 
         $this->headers = [
