@@ -12,7 +12,7 @@ class Buckets extends Resource
 {
     public function generate($data)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "bucket/url/generate",
             json_encode($data)
         );

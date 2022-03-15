@@ -12,19 +12,19 @@ class WebsiteVerify extends Resource
 {
     public function getSettings($websiteId)
     {
-        $result = $this->crisp->_rest->get("website/$websiteId/verify/settings");
+        $result = $this->crisp->get("website/$websiteId/verify/settings");
         return $this->formatResponse($result);
     }
 
     public function getKey($websiteId)
     {
-        $result = $this->crisp->_rest->get("website/$websiteId/verify/key");
+        $result = $this->crisp->get("website/$websiteId/verify/key");
         return $this->formatResponse($result);
     }
 
     public function updateSettings($websiteId, $params)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/verify/settings",
             $params
         );
@@ -33,9 +33,9 @@ class WebsiteVerify extends Resource
 
     public function rollKey($websiteId)
     {
-        $result = $this->crisp->_rest->post(
+        $result = $this->crisp->post(
             "website/$websiteId/verify/settings",
-            array()
+            json_encode([])
         );
         return $this->formatResponse($result);
     }

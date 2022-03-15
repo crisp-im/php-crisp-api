@@ -12,12 +12,12 @@ class UserProfile extends Resource
 {
     public function get()
     {
-        $result = $this->crisp->_rest->get("user/account/profile");
+        $result = $this->crisp->get("user/account/profile");
         return $this->formatResponse($result);
     }
     public function update($params)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "user/account/profile",
             json_encode($params)
         );

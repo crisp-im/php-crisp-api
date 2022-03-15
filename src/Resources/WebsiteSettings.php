@@ -12,13 +12,13 @@ class WebsiteSettings extends Resource
 {
     public function get($websiteId)
     {
-        $result = $this->crisp->_rest->get("website/$websiteId/settings");
+        $result = $this->crisp->get("website/$websiteId/settings");
         return $this->formatResponse($result);
     }
 
     public function update($websiteId, $params)
     {
-        $result = $this->crisp->_rest->patch(
+        $result = $this->crisp->patch(
             "website/$websiteId/settings",
             $params
         );

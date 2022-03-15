@@ -5,14 +5,12 @@ namespace Crisp;
 class CrispException extends \Exception
 {
     protected $response;
-    protected $info;
+    protected $error;
 
-    public function __construct($responseInfo, $responseData)
+    public function __construct($statusCode, $responseData)
     {
-        $this->info = $responseInfo;
-
         // Request error?
-        if (!isset($responseInfo->http_code)) {
+        if (!isset($statusCode)) {
             $this->error = [
                 "reason" => "error",
                 "message" => "internal_error",
@@ -25,14 +23,14 @@ class CrispException extends \Exception
         }
 
         // Response error?
-        else if ($responseInfo->http_code >= 400) {
+        else if ($statusCode >= 400) {
             $reasonMessage = isset($responseData["reason"]) ? $responseData["reason"] : "http_error";
             $dataMessage = (isset($responseData["data"]) && isset($responseData["data"]["message"])) ? $responseData["data"]["message"] : NULL;
 
             $this->error = [
                 "reason" => "error",
                 "message" => $reasonMessage,
-                "code" => $responseInfo->http_code,
+                "code" => $statusCode,
                 "data" => [
                     "namespace" => "response",
                     "message" => "Got response error: " . ($dataMessage !== NULL ? $dataMessage : $reasonMessage)
@@ -42,7 +40,7 @@ class CrispException extends \Exception
 
         parent::__construct(
             json_encode($this->error, JSON_UNESCAPED_SLASHES),
-            $responseInfo->http_code
+            $statusCode
         );
     }
 
@@ -54,10 +52,5 @@ class CrispException extends \Exception
     public function getError()
     {
         return $this->error;
-    }
-
-    public function getInfo()
-    {
-        return $this->info;
     }
 }

@@ -12,7 +12,7 @@ class WebsiteVisitors extends Resource
 {
     public function listVisitors($websiteId, $pageNumber = 1)
     {
-        $result = $this->crisp->_rest->get(
+        $result = $this->crisp->get(
             "website/$websiteId/visitors/list/$pageNumber"
         );
         return $this->formatResponse($result);
