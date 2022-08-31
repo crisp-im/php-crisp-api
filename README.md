@@ -848,7 +848,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get Subscription Details** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
+  * **Get Subscription Details** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
     * `CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId)`
     * <details>
       <summary>See Example</summary>
