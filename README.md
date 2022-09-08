@@ -42,9 +42,8 @@ $CrispClient = new \Crisp\CrispClient;
 $CrispClient->setTier("plugin");
 $CrispClient->authenticate(identifier, key);
 
-$profile = $CrispClient->userProfile->get();
-$firstName = $profile["first_name"];
-echo "Hello $firstName";
+$conversations = $CrispClient->websiteConversations->getList(websiteId, 1);
+echo $conversations;
 ```
 
 ### Available resources & methods
