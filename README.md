@@ -854,8 +854,9 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
       ```php
       $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+      $pluginId = "c64f3595-adee-425a-8d3a-89d47f7ed6bb";
 
-      CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId);
+      CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId, pluginId);
       ```
       </details>
 
