@@ -1,6 +1,6 @@
 # Crisp API PHP
 
-[![Build and Release](https://github.com/crisp-im/php-crisp-api/workflows/Build%20and%20Release/badge.svg)](https://github.com/crisp-im/php-crisp-api/actions?query=workflow%3A%22Build+and+Release%22) [![NPM](https://img.shields.io/packagist/v/crispchat/php-crisp-api.svg)](https://packagist.org/packages/crispchat/php-crisp-api) [![Downloads](https://img.shields.io/packagist/dt/crispchat/php-crisp-api.svg)](https://packagist.org/packages/crispchat/php-crisp-api)
+[![Build and Release](https://github.com/crisp-im/php-crisp-api/workflows/Build%20and%20Release/badge.svg)](https://github.com/crisp-im/php-crisp-api/actions?query=workflow%3A%22Build+and+Release%22) [![Version](https://img.shields.io/packagist/v/crispchat/php-crisp-api.svg)](https://packagist.org/packages/crispchat/php-crisp-api) [![Downloads](https://img.shields.io/packagist/dt/crispchat/php-crisp-api.svg)](https://packagist.org/packages/crispchat/php-crisp-api)
 
 The Crisp API PHP wrapper. Authenticate, send messages, fetch conversations, access your agent accounts from your PHP code.
 
