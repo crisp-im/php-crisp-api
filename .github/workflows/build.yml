@@ -1,0 +1,22 @@
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+name: Build and Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v3
+
+      - name: Publish
+        id: publish
+        uses: mnavarrocarter/packagist-update@v1.0
+        with:
+          username: "crisp-im"
+          api_token: ${{ secrets.PACKAGIST_API_TOKEN }}
+          package_name: crispchat/php-crisp-api
