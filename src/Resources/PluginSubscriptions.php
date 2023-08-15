@@ -14,6 +14,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 class PluginSubscriptions extends Resource
 {
     /**
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -24,6 +25,8 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -34,6 +37,9 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @param string $pluginId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -44,6 +50,9 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @param string $pluginId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -57,6 +66,9 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @param string $pluginId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -69,6 +81,9 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @param string $pluginId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -81,6 +96,10 @@ class PluginSubscriptions extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @param string $pluginId
+     * @param array $settings
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

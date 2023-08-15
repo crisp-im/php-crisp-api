@@ -14,8 +14,11 @@ use Psr\Http\Client\ClientExceptionInterface;
 class WebsiteVisitors extends Resource
 {
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function listVisitors($websiteId, $pageNumber = 1)
     {

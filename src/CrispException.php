@@ -7,6 +7,10 @@ class CrispException extends \Exception
     protected $response;
     protected $error;
 
+    /**
+     * @param int $statusCode
+     * @param array $responseData
+     */
     public function __construct($statusCode, $responseData)
     {
         // Request error?

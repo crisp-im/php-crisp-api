@@ -14,6 +14,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 class UserProfile extends Resource
 {
     /**
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -24,6 +25,8 @@ class UserProfile extends Resource
     }
 
     /**
+     * @param array $params
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */

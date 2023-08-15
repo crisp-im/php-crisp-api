@@ -31,8 +31,25 @@ class WebsiteConversations extends Resource
     ];
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @param string $searchQuery
+     * @param string $searchType
+     * @param string $searchOperator
+     * @param string $includeEmpty
+     * @param string $filterUnread
+     * @param string $filterResolved
+     * @param string $filterNotResolved
+     * @param string $filterMention
+     * @param string $filterAssigned
+     * @param string $filterUnassigned
+     * @param string $filterDateStart
+     * @param string $filterDateEnd
+     * @param string $orderDateCreated
+     * @param string $orderDateUpdated
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function findWithSearch($websiteId, $pageNumber = 1, $searchQuery = "", $searchType = "", $searchOperator = "", $includeEmpty = "", $filterUnread = "", $filterResolved = "", $filterNotResolved = "", $filterMention = "", $filterAssigned = "", $filterUnassigned = "", $filterDateStart = "", $filterDateEnd = "", $orderDateCreated = "", $orderDateUpdated = "")
     {
@@ -58,8 +75,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getList($websiteId, $pageNumber = 1)
     {
@@ -67,8 +87,10 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function create($websiteId)
     {
@@ -79,8 +101,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getOne($websiteId, $sessionId)
     {
@@ -91,8 +116,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function deleteOne($websiteId, $sessionId)
     {
@@ -103,8 +131,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function initiateOne($websiteId, $sessionId)
     {
@@ -115,8 +146,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param string $timestampBefore
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getMessages($websiteId, $sessionId, $timestampBefore = "")
     {
@@ -138,8 +173,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $message
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function sendMessage($websiteId, $sessionId, $message)
     {
@@ -151,8 +190,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $read
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function acknowledgeMessages($websiteId, $sessionId, $read)
     {
@@ -164,8 +207,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getRouting($websiteId, $sessionId)
     {
@@ -176,8 +222,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $routing
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function assignRouting($websiteId, $sessionId, $routing)
     {
@@ -189,8 +239,11 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getMeta($websiteId, $sessionId)
     {
@@ -201,8 +254,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $metas
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function updateMeta($websiteId, $sessionId, $metas)
     {
@@ -214,8 +271,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param string $originalId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getOriginalMessage($websiteId, $sessionId, $originalId)
     {
@@ -226,8 +287,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param 'pending'|'unresolved'|'resolved' $state
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function setState($websiteId, $sessionId, $state)
     {
@@ -239,8 +304,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param bool $blocked
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function setBlock($websiteId, $sessionId, $blocked = true)
     {
@@ -252,8 +321,12 @@ class WebsiteConversations extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $params
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function scheduleReminder($websiteId, $sessionId, $params)
     {

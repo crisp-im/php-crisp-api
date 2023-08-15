@@ -14,8 +14,10 @@ use Psr\Http\Client\ClientExceptionInterface;
 class WebsiteVerify extends Resource
 {
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getSettings($websiteId)
     {
@@ -24,8 +26,10 @@ class WebsiteVerify extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getKey($websiteId)
     {
@@ -34,8 +38,11 @@ class WebsiteVerify extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $params
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function updateSettings($websiteId, $params)
     {
@@ -47,8 +54,10 @@ class WebsiteVerify extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function rollKey($websiteId)
     {

@@ -14,8 +14,11 @@ use Psr\Http\Client\ClientExceptionInterface;
 class WebsitePeople extends Resource
 {
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $email
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function findByEmail($websiteId, $email)
     {
@@ -26,8 +29,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $searchText
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function findWithSearchText($websiteId, $searchText)
     {
@@ -38,8 +44,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param array $params
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function createNewPeopleProfile($websiteId, $params)
     {
@@ -51,8 +60,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return bool
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function checkPeopleProfileExists($websiteId, $peopleId)
     {
@@ -63,8 +75,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getPeopleProfile($websiteId, $peopleId)
     {
@@ -75,8 +90,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function listPeopleProfiles($websiteId, $pageNumber)
     {
@@ -87,8 +105,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function removePeopleProfile($websiteId, $peopleId)
     {
@@ -99,8 +120,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function savePeopleProfile($websiteId, $peopleId, $data)
     {
@@ -112,8 +137,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function updatePeopleProfile($websiteId, $peopleId, $data)
     {
@@ -125,8 +154,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function listPeopleSegments($websiteId, $pageNumber)
     {
@@ -137,8 +169,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function listPeopleConversations($websiteId, $peopleId, $pageNumber)
     {
@@ -149,8 +185,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function addPeopleEvent($websiteId, $peopleId, $data)
     {
@@ -162,8 +202,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param int $pageNumber
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function listPeopleEvent($websiteId, $peopleId, $pageNumber)
     {
@@ -174,8 +218,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getPeopleData($websiteId, $peopleId)
     {
@@ -186,8 +233,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function savePeopleData($websiteId, $peopleId, $data)
     {
@@ -199,8 +250,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function updatePeopleData($websiteId, $peopleId, $data)
     {
@@ -212,8 +267,11 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function getPeopleSubscriptionStatus($websiteId, $peopleId)
     {
@@ -224,8 +282,12 @@ class WebsitePeople extends Resource
     }
 
     /**
-     * @throws CrispException
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
      * @throws ClientExceptionInterface
+     * @throws CrispException
      */
     public function updatePeopleSubscriptionStatus($websiteId, $peopleId, $data)
     {

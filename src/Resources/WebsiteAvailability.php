@@ -14,6 +14,8 @@ use Psr\Http\Client\ClientExceptionInterface;
 class WebsiteAvailability extends Resource
 {
     /**
+     * @param string $websiteId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
@@ -24,6 +26,8 @@ class WebsiteAvailability extends Resource
     }
 
     /**
+     * @param string $websiteId
+     * @return array
      * @throws CrispException
      * @throws ClientExceptionInterface
      */
