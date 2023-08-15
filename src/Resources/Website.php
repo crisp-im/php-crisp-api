@@ -8,14 +8,25 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class Website extends Resource
 {
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function create($params)
     {
         $result = $this->crisp->post("website", json_encode($params));
         return $this->formatResponse($result);
     }
 
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function delete($websiteId)
     {
         $result = $this->crisp->delete("website/$websiteId");

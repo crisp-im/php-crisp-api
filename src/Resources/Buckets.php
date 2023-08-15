@@ -8,8 +8,15 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class Buckets extends Resource
 {
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function generate($data)
     {
         $result = $this->crisp->post(

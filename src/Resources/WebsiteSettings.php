@@ -8,14 +8,25 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class WebsiteSettings extends Resource
 {
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function get($websiteId)
     {
         $result = $this->crisp->get("website/$websiteId/settings");
         return $this->formatResponse($result);
     }
 
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function update($websiteId, $params)
     {
         $result = $this->crisp->patch(

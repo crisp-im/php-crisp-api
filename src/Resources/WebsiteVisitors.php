@@ -8,8 +8,15 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class WebsiteVisitors extends Resource
 {
+    /**
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
     public function listVisitors($websiteId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
