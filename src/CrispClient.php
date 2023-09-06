@@ -20,14 +20,13 @@ use Crisp\Resources\WebsiteSettings;
 use Crisp\Resources\WebsiteVerify;
 use Crisp\Resources\WebsiteVisitors;
 use Http\Client\HttpClient;
-use Http\Discovery\HttpClientDiscovery;
-use Http\Discovery\MessageFactoryDiscovery;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
-use Http\Message\MessageFactory;
 use Psr\Http\Client\ClientExceptionInterface;
-use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestFactoryInterface;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
 class CrispClient
@@ -112,6 +111,9 @@ class CrispClient
     }
 
     /**
+     * @param string $path
+     * @param string $encodedData
+     * @return ResponseInterface
      * @throws ClientExceptionInterface
      */
     public function post($path, $encodedData = '')
@@ -124,6 +126,9 @@ class CrispClient
     }
 
     /**
+     * @param string $path
+     * @param string $encodedData
+     * @return ResponseInterface
      * @throws ClientExceptionInterface
      */
     public function patch($path, $encodedData = '')
@@ -136,6 +141,9 @@ class CrispClient
     }
 
     /**
+     * @param string $path
+     * @param string $encodedData
+     * @return ResponseInterface
      * @throws ClientExceptionInterface
      */
     public function put($path, $encodedData = '')
@@ -148,6 +156,8 @@ class CrispClient
     }
 
     /**
+     * @param string $path
+     * @return ResponseInterface
      * @throws ClientExceptionInterface
      */
     public function get($path)
@@ -158,6 +168,8 @@ class CrispClient
     }
 
     /**
+     * @param string $path
+     * @return ResponseInterface
      * @throws ClientExceptionInterface
      */
     public function delete($path)
@@ -167,6 +179,11 @@ class CrispClient
         );
     }
 
+    /**
+     * @param string $method
+     * @param string $path
+     * @return MessageInterface|RequestInterface
+     */
     private function createBaseRequest($method, $path)
     {
         $request = $this->requestFactory->createRequest($method, $this->getUri($path));
@@ -179,7 +196,7 @@ class CrispClient
     }
 
     /**
-     * @param $path
+     * @param string $path
      *
      * @return string
      */
@@ -188,17 +205,30 @@ class CrispClient
         return rtrim($this->baseUrl, '/') .'/' .ltrim($path, '/');
     }
 
+    /**
+     * @param string $host
+     * @return void
+     */
     public function setRestHost($host)
     {
         $this->baseUrl = $host;
     }
 
+    /**
+     * @param string $identifier
+     * @param string $key
+     * @return void
+     */
     public function authenticate($identifier, $key)
     {
         $login = sprintf('%s:%s', $identifier, $key);
         $this->headers['Authorization'] = sprintf('Basic %s', base64_encode($login));
     }
 
+    /**
+     * @param 'user'|'plugin' $tier
+     * @return void
+     */
     public function setTier($tier)
     {
         $this->headers["X-Crisp-Tier"] = $tier;

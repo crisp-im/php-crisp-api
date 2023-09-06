@@ -8,6 +8,9 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class WebsiteConversations extends Resource
 {
     const FIND_WITH_SEARCH_QUERY_PARAMETERS = [
@@ -27,6 +30,27 @@ class WebsiteConversations extends Resource
         ["orderDateUpdated", "order_date_updated"]
     ];
 
+    /**
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @param string $searchQuery
+     * @param string $searchType
+     * @param string $searchOperator
+     * @param string $includeEmpty
+     * @param string $filterUnread
+     * @param string $filterResolved
+     * @param string $filterNotResolved
+     * @param string $filterMention
+     * @param string $filterAssigned
+     * @param string $filterUnassigned
+     * @param string $filterDateStart
+     * @param string $filterDateEnd
+     * @param string $orderDateCreated
+     * @param string $orderDateUpdated
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function findWithSearch($websiteId, $pageNumber = 1, $searchQuery = "", $searchType = "", $searchOperator = "", $includeEmpty = "", $filterUnread = "", $filterResolved = "", $filterNotResolved = "", $filterMention = "", $filterAssigned = "", $filterUnassigned = "", $filterDateStart = "", $filterDateEnd = "", $orderDateCreated = "", $orderDateUpdated = "")
     {
         $resourceUrl = "";
@@ -50,11 +74,24 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getList($websiteId, $pageNumber = 1)
     {
         return $this->findWithSearch($websiteId, $pageNumber);
     }
 
+    /**
+     * @param string $websiteId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function create($websiteId)
     {
         $result = $this->crisp->post(
@@ -63,6 +100,13 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getOne($websiteId, $sessionId)
     {
         $result = $this->crisp->get(
@@ -71,6 +115,13 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function deleteOne($websiteId, $sessionId)
     {
         $result = $this->crisp->delete(
@@ -79,6 +130,13 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function initiateOne($websiteId, $sessionId)
     {
         $result = $this->crisp->post(
@@ -87,6 +145,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param string $timestampBefore
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getMessages($websiteId, $sessionId, $timestampBefore = "")
     {
         $resourceUrl = "";
@@ -106,6 +172,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $message
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function sendMessage($websiteId, $sessionId, $message)
     {
         $result = $this->crisp->post(
@@ -115,6 +189,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $read
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function acknowledgeMessages($websiteId, $sessionId, $read)
     {
         $result = $this->crisp->patch(
@@ -124,6 +206,13 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getRouting($websiteId, $sessionId)
     {
         $result = $this->crisp->get(
@@ -132,6 +221,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $routing
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function assignRouting($websiteId, $sessionId, $routing)
     {
         $result = $this->crisp->patch(
@@ -141,6 +238,13 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getMeta($websiteId, $sessionId)
     {
         $result = $this->crisp->get(
@@ -149,6 +253,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $metas
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function updateMeta($websiteId, $sessionId, $metas)
     {
         $result = $this->crisp->patch(
@@ -158,6 +270,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param string $originalId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getOriginalMessage($websiteId, $sessionId, $originalId)
     {
         $result = $this->crisp->get(
@@ -166,6 +286,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param 'pending'|'unresolved'|'resolved' $state
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function setState($websiteId, $sessionId, $state)
     {
         $result = $this->crisp->patch(
@@ -175,6 +303,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param bool $blocked
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function setBlock($websiteId, $sessionId, $blocked = true)
     {
         $result = $this->crisp->patch(
@@ -184,6 +320,14 @@ class WebsiteConversations extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $sessionId
+     * @param array $params
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function scheduleReminder($websiteId, $sessionId, $params)
     {
         $result = $this->crisp->post(

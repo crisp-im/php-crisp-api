@@ -16,6 +16,10 @@ abstract class Resource
         $this->crisp = $parent;
     }
 
+    /**
+     * @param array $query
+     * @return string
+     */
     protected function prepareQuery($query)
     {
         return (
@@ -27,6 +31,7 @@ abstract class Resource
 
     /**
      * @throws CrispException
+     * @return array
      */
     protected function formatResponse(ResponseInterface $response)
     {

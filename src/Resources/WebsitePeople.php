@@ -8,8 +8,18 @@
 
 namespace Crisp\Resources;
 
+use Crisp\CrispException;
+use Psr\Http\Client\ClientExceptionInterface;
+
 class WebsitePeople extends Resource
 {
+    /**
+     * @param string $websiteId
+     * @param string $email
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function findByEmail($websiteId, $email)
     {
         $result = $this->crisp->get(
@@ -18,6 +28,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $searchText
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function findWithSearchText($websiteId, $searchText)
     {
         $result = $this->crisp->get(
@@ -26,6 +43,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param array $params
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function createNewPeopleProfile($websiteId, $params)
     {
         $result = $this->crisp->post(
@@ -35,6 +59,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return bool
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function checkPeopleProfileExists($websiteId, $peopleId)
     {
         $result = $this->crisp->get(
@@ -43,6 +74,13 @@ class WebsitePeople extends Resource
         return !empty($this->formatResponse($result));
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getPeopleProfile($websiteId, $peopleId)
     {
         $result = $this->crisp->get(
@@ -51,6 +89,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function listPeopleProfiles($websiteId, $pageNumber)
     {
         $result = $this->crisp->get(
@@ -59,6 +104,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function removePeopleProfile($websiteId, $peopleId)
     {
         $result = $this->crisp->delete(
@@ -67,6 +119,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function savePeopleProfile($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->put(
@@ -76,6 +136,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function updatePeopleProfile($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->patch(
@@ -85,6 +153,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function listPeopleSegments($websiteId, $pageNumber)
     {
         $result = $this->crisp->get(
@@ -93,6 +168,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function listPeopleConversations($websiteId, $peopleId, $pageNumber)
     {
         $result = $this->crisp->get(
@@ -101,6 +184,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function addPeopleEvent($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->post(
@@ -110,6 +201,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function listPeopleEvent($websiteId, $peopleId, $pageNumber)
     {
         $result = $this->crisp->get(
@@ -118,6 +217,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getPeopleData($websiteId, $peopleId)
     {
         $result = $this->crisp->get(
@@ -126,6 +232,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function savePeopleData($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->put(
@@ -135,6 +249,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function updatePeopleData($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->patch(
@@ -144,6 +266,13 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function getPeopleSubscriptionStatus($websiteId, $peopleId)
     {
         $result = $this->crisp->get(
@@ -152,6 +281,14 @@ class WebsitePeople extends Resource
         return $this->formatResponse($result);
     }
 
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param array $data
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
     public function updatePeopleSubscriptionStatus($websiteId, $peopleId, $data)
     {
         $result = $this->crisp->patch(
