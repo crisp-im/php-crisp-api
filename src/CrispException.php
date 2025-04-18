@@ -29,7 +29,7 @@ class CrispException extends \Exception
         // Response error?
         else if ($statusCode >= 400) {
             $reasonMessage = isset($responseData["reason"]) ? $responseData["reason"] : "http_error";
-            $dataMessage = (isset($responseData["data"]) && isset($responseData["data"]["message"])) ? $responseData["data"]["message"] : NULL;
+            $dataMessage = (isset($responseData["data"]) && isset($responseData["data"]["message"])) ? $responseData["data"]["message"] : null;
 
             $this->error = [
                 "reason" => "error",
@@ -37,7 +37,7 @@ class CrispException extends \Exception
                 "code" => $statusCode,
                 "data" => [
                     "namespace" => "response",
-                    "message" => "Got response error: " . ($dataMessage !== NULL ? $dataMessage : $reasonMessage)
+                    "message" => "Got response error: " . ($dataMessage !== null ? $dataMessage : $reasonMessage)
                 ]
             ];
         }

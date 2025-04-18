@@ -25,7 +25,7 @@ abstract class Resource
         return (
             is_array($query) && count($query) > 0
         )
-            ? "?".http_build_query($query, null, "&", PHP_QUERY_RFC3986)
+            ? "?" . http_build_query($query, "", "&", PHP_QUERY_RFC3986)
             : "";
     }
 
