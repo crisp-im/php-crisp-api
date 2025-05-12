@@ -86,7 +86,7 @@ class CrispClient
      */
     public $pluginSubscriptions;
 
-    public function __construct(HttpClient $client = null, RequestFactoryInterface $requestFactory = null, StreamFactoryInterface $streamFactory = null)
+    public function __construct(?HttpClient $client = null, ?RequestFactoryInterface $requestFactory = null, ?StreamFactoryInterface $streamFactory = null)
     {
         $this->client  = $client ?: Psr18ClientDiscovery::find();
         $this->requestFactory = $requestFactory ?: Psr17FactoryDiscovery::findRequestFactory();
