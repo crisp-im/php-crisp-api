@@ -209,6 +209,23 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
+    public function listPeopleEvents($websiteId, $peopleId, $pageNumber)
+    {
+        $result = $this->crisp->get(
+            "website/$websiteId/people/events/$peopleId/list/$pageNumber"
+        );
+        return $this->formatResponse($result);
+    }
+
+    /**
+     * @param string $websiteId
+     * @param string $peopleId
+     * @param int $pageNumber
+     * @return array
+     * @throws ClientExceptionInterface
+     * @throws CrispException
+     */
+    #[\Deprecated(message: 'use listPeopleEvents() instead')]
     public function listPeopleEvent($websiteId, $peopleId, $pageNumber)
     {
         $result = $this->crisp->get(

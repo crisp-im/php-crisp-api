@@ -496,7 +496,7 @@ All methods that you will most likely need when building a Crisp integration are
       </details>
 
   * **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
-    * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber)`
+    * `CrispClient->websitePeople->listPeopleEvents(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
 
@@ -505,7 +505,7 @@ All methods that you will most likely need when building a Crisp integration are
       $peopleId = "c5a2f70c-f605-4648-b47f-8c39d4b03a50";
       $pageNumber = 1;
 
-      CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber);
+      CrispClient->websitePeople->listPeopleEvents(websiteId, peopleId, pageNumber);
       ```
       </details>
 
