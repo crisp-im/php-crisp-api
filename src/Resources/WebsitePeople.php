@@ -209,7 +209,7 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function listPeopleEvents($websiteId, $peopleId, $pageNumber)
+    public function listPeopleEvents($websiteId, $peopleId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
             "website/$websiteId/people/events/$peopleId/list/$pageNumber"
