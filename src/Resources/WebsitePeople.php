@@ -96,7 +96,7 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function listPeopleProfiles($websiteId, $pageNumber)
+    public function listPeopleProfiles($websiteId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
             "website/$websiteId/people/profiles/$pageNumber"
@@ -160,7 +160,7 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function listPeopleSegments($websiteId, $pageNumber)
+    public function listPeopleSegments($websiteId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
             "website/$websiteId/people/segments/$pageNumber"
@@ -176,7 +176,7 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function listPeopleConversations($websiteId, $peopleId, $pageNumber)
+    public function listPeopleConversations($websiteId, $peopleId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
             "website/$websiteId/people/conversations/$peopleId/list/$pageNumber"
@@ -209,7 +209,7 @@ class WebsitePeople extends Resource
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function listPeopleEvent($websiteId, $peopleId, $pageNumber)
+    public function listPeopleEvent($websiteId, $peopleId, $pageNumber = 1)
     {
         $result = $this->crisp->get(
             "website/$websiteId/people/events/$peopleId/list/$pageNumber"
