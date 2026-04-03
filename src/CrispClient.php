@@ -226,7 +226,7 @@ class CrispClient
     }
 
     /**
-     * @param 'user'|'plugin' $tier
+     * @param 'user'|'website'|'plugin' $tier
      * @return void
      */
     public function setTier($tier)
