@@ -63,7 +63,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 * **Website Conversations**
 
-  * ⭐ **List Conversations** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
+  * ⭐ **List Conversations**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient->websiteConversations->getList(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -76,7 +76,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Create a Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
+  * ⭐ **Create a Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-a-new-conversation)
     * `CrispClient->websiteConversations->create(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -88,7 +88,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Initiate a Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-a-conversation-with-existing-session)
+  * **Initiate a Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#initiate-a-conversation-with-existing-session)
     * `CrispClient->websiteConversations->initiateOne(websiteId, sessionId)`
     * <details>
       <summary>See Example</summary>
@@ -101,7 +101,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Find Conversations With Search** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
+  * **Find Conversations With Search**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-conversations)
     * `CrispClient->websiteConversations->findWithSearch(websiteId, pageNumber, searchQuery, searchType, searchOperator, includeEmpty, filterUnread, filterResolved, filterNotResolved, filterMention, filterAssigned, filterUnassigned, filterDateStart, filterDateEnd, orderDateCreated, orderDateUpdated)`
     * <details>
       <summary>See Example</summary>
@@ -114,7 +114,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Get A Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation)
+  * ⭐ **Get A Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-conversation)
     * `CrispClient->websiteConversations->getOne(websiteId, sessionId)`
     * <details>
       <summary>See Example</summary>
@@ -127,7 +127,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Send a Message in Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation)
+  * ⭐ **Send a Message in Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#send-a-message-in-conversation)
     * `CrispClient->websiteConversations->sendMessage(websiteId, sessionId, message)`
     * <details>
       <summary>See Example</summary>
@@ -147,7 +147,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Get Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
+  * ⭐ **Get Conversation Metas**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-metas)
     * `CrispClient->websiteConversations->getMeta(websiteId, sessionId)`
     * <details>
       <summary>See Example</summary>
@@ -160,7 +160,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Update Conversation Metas** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
+  * ⭐ **Update Conversation Metas**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-metas)
     * `CrispClient->websiteConversations->updateMeta(websiteId, sessionId, params)`
     * <details>
       <summary>See Example</summary>
@@ -187,7 +187,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Get Messages in Conversation** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
+  * ⭐ **Get Messages in Conversation**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-messages-in-conversation)
     * `CrispClient->websiteConversations->getMessages(websiteId, sessionId, timestampBefore)`
     * <details>
       <summary>See Example</summary>
@@ -201,7 +201,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Get Conversation Original Message** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
+  * **Get Conversation Original Message**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-an-original-message-in-conversation)
     * `CrispClient->websiteConversations->getOriginalMessage(websiteId, sessionId, originalId)`
     * <details>
       <summary>See Example</summary>
@@ -215,7 +215,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Change Conversation State** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state)
+  * ⭐ **Change Conversation State**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-conversation-open-state)
     * `CrispClient->websiteConversations->setState(websiteId, sessionId, state)`
     * <details>
       <summary>See Example</summary>
@@ -230,7 +230,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Get Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
+  * **Get Conversation Routing**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-conversation-routing-assign)
     * `CrispClient->websiteConversations->getRouting(websiteId, sessionId)`
     * <details>
       <summary>See Example</summary>
@@ -243,7 +243,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Assign Conversation Routing** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
+  * **Assign Conversation Routing**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#assign-conversation-routing)
     * `CrispClient->websiteConversations->assignRouting(websiteId, sessionId, params)`
     * <details>
       <summary>See Example</summary>
@@ -262,7 +262,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Block Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
+  * **Block Conversation:**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#block-incoming-messages-for-conversation)
     * `CrispClient->websiteConversations->setBlock(websiteId, sessionId, blocked)`
     * <details>
       <summary>See Example</summary>
@@ -277,7 +277,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Delete Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
+  * **Delete Conversation:**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-a-conversation)
     * `CrispClient->websiteConversations->deleteOne(websiteId, sessionId)`
     * <details>
       <summary>See Example</summary>
@@ -290,7 +290,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Acknowledge Messages as Read:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
+  * **Acknowledge Messages as Read:**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#mark-messages-as-read-in-conversation)
     * `CrispClient->websiteConversations->acknowledgeMessages(websiteId, sessionId, fingerprints)`
     * <details>
       <summary>See Example</summary>
@@ -312,7 +312,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Schedule a Reminder in a Conversation:** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
+  * **Schedule a Reminder in a Conversation:**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#schedule-a-reminder-for-conversation)
     * `CrispClient->websiteConversations->scheduleReminder(websiteId, sessionId, params)`
     * <details>
       <summary>See Example</summary>
@@ -334,7 +334,7 @@ All methods that you will most likely need when building a Crisp integration are
 
 * **Website People** _(these are your end-users)_
 
-  * **Find By Email** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+  * **Find By Email**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
     * `CrispClient->websitePeople->findByEmail(websiteId, email)`
     * <details>
       <summary>See Example</summary>
@@ -346,7 +346,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Find With Search Text (Name, Email, Segments)** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+  * **Find With Search Text (Name, Email, Segments)**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
     * `CrispClient->websitePeople->findWithSearchText(websiteId, searchText)`
     * <details>
       <summary>See Example</summary>
@@ -358,7 +358,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Create A New Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
+  * **Create A New Profile**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-new-people-profile)
     * `CrispClient->websitePeople->createNewPeopleProfile(websiteId, params)`
     * <details>
       <summary>See Example</summary>
@@ -377,7 +377,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Check If Exists** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
+  * ⭐ **Check If Exists**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#check-if-people-profile-exists)
     * `CrispClient->websitePeople->checkPeopleProfileExists(websiteId, peopleId)`
     * <details>
       <summary>See Example</summary>
@@ -390,7 +390,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Get People Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
+  * ⭐ **Get People Profile**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-profile)
     * `CrispClient->websitePeople->getPeopleProfile(websiteId, peopleId)`
     * <details>
       <summary>See Example</summary>
@@ -402,7 +402,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **List People Profiles** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
+  * ⭐ **List People Profiles**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-profiles)
     * `CrispClient->websitePeople->listPeopleProfiles(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -414,7 +414,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Remove A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile)
+  * ⭐ **Remove A Profile**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#remove-people-profile)
     * `CrispClient->websitePeople->removePeopleProfile(websiteId, peopleId)`
     * <details>
       <summary>See Example</summary>
@@ -427,7 +427,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Save A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-profile)
+  * ⭐ **Save A Profile**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-profile)
     * `CrispClient->websitePeople->savePeopleProfile(websiteId, peopleId, params)`
     * <details>
       <summary>See Example</summary>
@@ -447,7 +447,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * ⭐ **Update A Profile** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
+  * ⭐ **Update A Profile**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-profile)
     * `CrispClient->websitePeople->updatePeopleProfile(websiteId, peopleId, params)`
     * <details>
       <summary>See Example</summary>
@@ -467,7 +467,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **List Conversations** [`user`, `plugin`] [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
+  * **List Conversations** [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-conversations)
     * `CrispClient->websitePeople->listPeopleConversations(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -481,7 +481,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **List Segments** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
+  * **List Segments**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-suggested-people-segments)
     * `CrispClient->websitePeople->listPeopleSegments(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -495,7 +495,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **List Events** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
+  * **List Events**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-people-events)
     * `CrispClient->websitePeople->listPeopleEvent(websiteId, peopleId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -509,7 +509,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Add Event** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
+  * **Add Event**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#add-a-people-event)
     * `CrispClient->websitePeople->addPeopleEvent(websiteId, peopleId, event)`
     * <details>
       <summary>See Example</summary>
@@ -531,7 +531,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Get Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-data)
+  * **Get Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-data)
     * `CrispClient->websitePeople->getPeopleData(websiteId, peopleId)`
     * <details>
       <summary>See Example</summary>
@@ -544,7 +544,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Save Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-data)
+  * **Save Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-people-data)
     * `CrispClient->websitePeople->savePeopleData(websiteId, peopleId, params)`
     * <details>
       <summary>See Example</summary>
@@ -564,7 +564,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Update Data** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-data)
+  * **Update Data**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-data)
     * `CrispClient->websitePeople->updatePeopleData(websiteId, peopleId, params)`
     * <details>
       <summary>See Example</summary>
@@ -583,7 +583,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Get Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-subscription-status)
+  * **Get Subscription Status**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-people-subscription-status)
     * `CrispClient->websitePeople->getPeopleSubscriptionStatus(websiteId, peopleId)`
     * <details>
       <summary>See Example</summary>
@@ -596,7 +596,7 @@ All methods that you will most likely need when building a Crisp integration are
       ```
       </details>
 
-  * **Update Subscription Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-subscription-status)
+  * **Update Subscription Status**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-people-subscription-status)
     * `CrispClient->websitePeople->updatePeopleSubscriptionStatus(websiteId, peopleId, params)`
     * <details>
       <summary>See Example</summary>
@@ -619,7 +619,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Base**
 
-  * **Create A Website** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-website)
+  * **Create A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#create-website)
     * `CrispClient->website->create(params)`
     * <details>
       <summary>See Example</summary>
@@ -629,7 +629,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Delete A Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-a-website)
+  * **Delete A Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#delete-a-website)
     * `CrispClient->website->delete(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -645,7 +645,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Settings**
 
-  * **Get Website Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-settings)
+  * **Get Website Settings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-settings)
     * `CrispClient->websiteSettings->get(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -657,14 +657,14 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Update Website Settings** [`user`, `plugin`][Reference](https://docs.crisp.chat/references/rest-api/v1/#update-website-settings):
+  * **Update Website Settings**[Reference](https://docs.crisp.chat/references/rest-api/v1/#update-website-settings):
     * `CrispClient->websiteSettings->get(params)`
 
 
 
 * **Website Verify**
 
-  * **Get Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings)
+  * **Get Verify Settings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-settings)
     * `CrispClient->websiteVerify->getSettings(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -676,7 +676,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Update Verify Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-verify-settings)
+  * **Update Verify Settings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#update-verify-settings)
     * `CrispClient->websiteVerify->updateSettings(websiteId, params)`
     * <details>
       <summary>See Example</summary>
@@ -692,7 +692,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get Verify Key** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-key)
+  * **Get Verify Key**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-verify-key)
     * `CrispClient->websiteVerify->getKey(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -704,7 +704,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Roll Key** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#roll-verify-key)
+  * **Roll Key**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#roll-verify-key)
     * `CrispClient->websiteVerify->rollKey(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -720,7 +720,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Operators**
 
-  * **Get All Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operators)
+  * **Get All Operators**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operators)
     * `CrispClient->websiteOperators->getList(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -732,7 +732,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get One Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-website-operator)
+  * **Get One Operators**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-a-website-operator)
     * `CrispClient->websiteOperators->getOne(websiteId, operatorId)`
     * <details>
       <summary>See Example</summary>
@@ -745,7 +745,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Delete One Operators** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website)
+  * **Delete One Operators**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unlink-operator-from-website)
     * `CrispClient->websiteOperators->deleteOne(websiteId, operatorId)`
     * <details>
       <summary>See Example</summary>
@@ -758,7 +758,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Update An Operator** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership)
+  * **Update An Operator**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#change-operator-membership)
     * `CrispClient->websiteOperators->updateOne(websiteId, operatorId, parameters)`
     * <details>
       <summary>See Example</summary>
@@ -780,7 +780,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Visitors**
 
-  * **List Visitors** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-visitors)
+  * **List Visitors**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-visitors)
     * `CrispClient->websiteVisitors->listVisitors(websiteId, pageNumber)`
     * <details>
       <summary>See Example</summary>
@@ -797,7 +797,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Website Availability**
 
-  * **Get Availability Status** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status)
+  * **Get Availability Status**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-website-availability-status)
     * `CrispClient->websiteAvailability->getAvailabilityStatus(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -809,7 +809,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **List Operator Availabilities** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operator-availabilities)
+  * **List Operator Availabilities**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-website-operator-availabilities)
     * `CrispClient->websiteAvailability->listOperatorAvailabilities(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -827,7 +827,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
 
 * **Plugin Subscriptions**
 
-  * **List All Active Subsciptions** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
+  * **List All Active Subsciptions**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-all-active-subscriptions)
     * `CrispClient->pluginSubscriptions->listAllActiveSubscriptions()`
     * <details>
       <summary>See Example</summary>
@@ -837,7 +837,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get All Subscriptions For Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-subscriptions-for-a-website)
+  * **Get All Subscriptions For Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#list-subscriptions-for-a-website)
     * `CrispClient->pluginSubscriptions->listSubscriptionsForWebsite(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -849,7 +849,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get Subscription Details** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
+  * **Get Subscription Details**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-details)
     * `CrispClient->pluginSubscriptions->getSubscriptionDetails(websiteId)`
     * <details>
       <summary>See Example</summary>
@@ -862,7 +862,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Subscribe Website To Plugin** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plugin)
+  * **Subscribe Website To Plugin**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#subscribe-website-to-plugin)
     * `CrispClient->pluginSubscriptions->subscribeWebsiteToPlugin(websiteId, pluginId)`
     * <details>
       <summary>See Example</summary>
@@ -877,7 +877,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Unsubscribe Plugin From Website** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plugin-from-website)
+  * **Unsubscribe Plugin From Website**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#unsubscribe-plugin-from-website)
     * `CrispClient->pluginSubscriptions->unsubscribePluginFromWebsite(websiteId, pluginId)`
     * <details>
       <summary>See Example</summary>
@@ -890,7 +890,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Get Subscription Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-settings)
+  * **Get Subscription Settings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#get-subscription-settings)
     * `CrispClient->pluginSubscriptions->getSubscriptionSettings(websiteId, pluginId)`
     * <details>
       <summary>See Example</summary>
@@ -903,7 +903,7 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
-  * **Save Subscription Settings** [`user`, `plugin`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-subscription-settings)
+  * **Save Subscription Settings**: [Reference](https://docs.crisp.chat/references/rest-api/v1/#save-subscription-settings)
     * `CrispClient->pluginSubscriptions->saveSubscriptionSettings(websiteId, pluginId, settings)`
     * <details>
       <summary>See Example</summary>
