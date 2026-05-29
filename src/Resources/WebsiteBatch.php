@@ -129,4 +129,30 @@ class WebsiteBatch extends Resource
         $result = $this->crisp->patch("website/$websiteId/batch/inbox", json_encode($data));
         return $this->formatResponse($result);
     }
+
+    /**
+     * @param string $websiteId
+     * @param array $data
+     * @return array
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function batchDataItems($websiteId, $data)
+    {
+        $result = $this->crisp->patch("website/$websiteId/batch/data", json_encode($data));
+        return $this->formatResponse($result);
+    }
+
+    /**
+     * @param string $websiteId
+     * @param array $data
+     * @return array
+     * @throws CrispException
+     * @throws ClientExceptionInterface
+     */
+    public function batchSegmentsItems($websiteId, $data)
+    {
+        $result = $this->crisp->patch("website/$websiteId/batch/segments", json_encode($data));
+        return $this->formatResponse($result);
+    }
 }

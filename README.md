@@ -1002,6 +1002,52 @@ _👉 Notice: The `peopleID` argument can be an email or the `peopleID`._
       ```
       </details>
 
+  * **Batch Data Items** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-data-items)
+    * `CrispClient->websiteBatch->batchDataItems(websiteId, data)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```php
+      $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      $data = [
+        "sessions" => [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+        "data" => [
+          "plan" => "pro",
+          "subscribed" => true
+        ]
+      ];
+
+      CrispClient->websiteBatch->batchDataItems($websiteId, $data);
+      ```
+      </details>
+
+  * **Batch Segments Items** [`user`]: [Reference](https://docs.crisp.chat/references/rest-api/v1/#batch-segments-items)
+    * `CrispClient->websiteBatch->batchSegmentsItems(websiteId, data)`
+    * <details>
+      <summary>See Example</summary>
+
+      ```php
+      $websiteId = "8c842203-7ed8-4e29-a608-7cf78a7d2fcc";
+
+      $data = [
+        "sessions" => [
+          "session_19e5240f-0a8d-461e-a661-a3123fc6eec9",
+          "session_700c65e1-85e2-465a-b9ac-ecb5ec2c9881"
+        ],
+        "segments" => [
+          "vip",
+          "lead"
+        ]
+      ];
+
+      CrispClient->websiteBatch->batchSegmentsItems($websiteId, $data);
+      ```
+      </details>
+
 
 
 ### Plugins
