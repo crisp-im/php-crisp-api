@@ -149,17 +149,27 @@ class WebsiteConversations extends Resource
      * @param string $websiteId
      * @param string $sessionId
      * @param string $timestampBefore
+     * @param string $timestampAfter
+     * @param string $timestampAround
      * @return array
      * @throws ClientExceptionInterface
      * @throws CrispException
      */
-    public function getMessages($websiteId, $sessionId, $timestampBefore = "")
+    public function getMessages($websiteId, $sessionId, $timestampBefore = "", $timestampAfter = "", $timestampAround = "")
     {
         $resourceUrl = "";
         $query = [];
 
         if ($timestampBefore != "") {
             $query["timestamp_before"] = $timestampBefore;
+        }
+
+        if ($timestampAfter != "") {
+            $query["timestamp_after"] = $timestampAfter;
+        }
+
+        if ($timestampAround != "") {
+            $query["timestamp_around"] = $timestampAround;
         }
 
         if ($query != []) {
